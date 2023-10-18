@@ -1,0 +1,19 @@
+button {
+    background-color: $light;
+    border: none;
+    border-radius: 6.6rem;
+    color: $darker;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 3.2;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $accent;
+    }
+}

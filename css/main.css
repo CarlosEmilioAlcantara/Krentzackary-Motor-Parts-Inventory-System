@@ -9,12 +9,22 @@ html {
 }
 
 body {
+  height: 100vh;
   font-size: 1.6rem;
   line-height: 1.6;
+  background-color: #434c51;
+  font-family: "Nunito", sans-serif;
 }
 
 li {
   list-style: none;
+}
+
+.container {
+  max-width: 124rem;
+  width: 100%;
+  padding: 0 2.2rem;
+  margin: 0 auto;
 }
 
 .subparagraph {
@@ -25,4 +35,91 @@ li {
 .subsubparagraph {
   font-size: 1rem;
   line-height: 1;
+}
+
+button {
+  background-color: #e5e7e6;
+  border: none;
+  border-radius: 6.6rem;
+  color: #32373a;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff8e00;
+}
+
+input {
+  background-color: #e5e7e6;
+  border: 0;
+  border-radius: 3.3rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #32373a;
+  color: #e5e7e6;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  margin-bottom: 10rem;
+}
+.banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.banner img {
+  width: 50%;
+}
+.banner__login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #32373a;
+  padding: 5rem 5rem 12rem 5rem;
+  border-radius: 3.3rem;
+  gap: 3rem;
+}
+.banner__login i {
+  color: #ff8e00;
+}
+.banner__login h3 {
+  color: #e5e7e6;
+}
+.banner__login input {
+  padding: 1.5rem 7rem;
+}
+.banner__login__user div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.banner__login__password div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=main.css.map */

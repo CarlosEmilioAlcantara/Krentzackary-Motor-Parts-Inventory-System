@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    margin-bottom: 10rem;
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    img {
+        width: 50%;
+    }
+
+    &__login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: $darker;
+        padding: 5rem 5rem 12rem 5rem;
+        border-radius: 3.3rem;
+        gap: 3rem;
+
+        i {
+            color: $accent;
+        }
+    
+        h3 {
+            color: $light;
+        }
+
+        input {
+            padding: 1.5rem 7rem;
+        }
+
+        &__user {
+            div {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        &__password {
+            div {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

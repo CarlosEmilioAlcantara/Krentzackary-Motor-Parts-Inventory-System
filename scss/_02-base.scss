@@ -9,8 +9,11 @@ html {
 }
 
 body {
+    height: 100vh;
     font-size: 1.6rem;
     line-height: 1.6;
+    background-color: $dark;
+    font-family: 'Nunito', sans-serif;
 }
 
 li {
