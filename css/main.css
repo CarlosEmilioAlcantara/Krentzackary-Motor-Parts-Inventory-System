@@ -39,7 +39,6 @@ li {
 
 a.button {
   background-color: #e5e7e6;
-  border: none;
   border-radius: 6.6rem;
   color: #32373a;
   width: 20rem;
@@ -60,7 +59,7 @@ a.button.selected {
 
 input {
   background-color: #e5e7e6;
-  border: 0;
+  border: none;
   border-radius: 3.3rem;
 }
 
@@ -74,6 +73,7 @@ input {
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
   z-index: 1;
 }
 .overlay.open {
@@ -92,6 +92,7 @@ input {
   height: 11rem;
   background-color: #32373a;
   border-radius: 3.3rem;
+  transition: 0.5s;
 }
 .popup-message__container {
   padding-top: 0.8rem;
@@ -137,8 +138,8 @@ input {
 
 .topbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 5rem;
   background-color: #ff8e00;
@@ -151,6 +152,8 @@ input {
 .topbar__burgermenu {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 0.4rem;
   cursor: pointer;
 }
@@ -164,6 +167,7 @@ input {
 }
 .topbar__logoutbutton a {
   display: flex;
+  justify-content: "";
   align-items: center;
   gap: 0.6rem;
   color: #32373a;
@@ -175,10 +179,10 @@ input {
   height: 0;
 }
 .topbar.open span:nth-of-type(2) {
-  transform: rotate(45deg) translateY(0.7rem) translateX(0.2rem);
+  transform: rotate(45deg) translateX(0.2rem) translateY(0.7rem);
 }
 .topbar.open span:nth-of-type(3) {
-  transform: rotate(-45deg) translateY(-0.3rem) translateX(-0.1rem);
+  transform: rotate(-45deg) translateX(-0.1rem) translateY(-0.3rem);
 }
 .topbar.open span:nth-of-type(4) {
   width: 0;
@@ -188,18 +192,21 @@ input {
 .sidebar {
   display: flex;
   flex-direction: column;
+  justify-content: "";
   align-items: center;
   gap: 5rem;
   background-color: #32373a;
-  height: 100%;
   position: fixed;
-  z-index: 1;
   top: 0;
+  right: "";
+  bottom: "";
   left: 0;
   overflow-x: hidden;
   padding-top: 6rem;
   transition: 0.5s;
   width: 0rem;
+  height: 100%;
+  z-index: 1;
 }
 .sidebar .userinfo {
   display: flex;
@@ -214,6 +221,8 @@ input {
 .sidebar .userinfo__left .circle::after {
   content: url("../../assets/images/user-image-navbar.png");
   position: relative;
+  top: "";
+  right: "";
   bottom: 0.5rem;
   left: 0.5rem;
 }
@@ -224,6 +233,8 @@ input {
 .sidebar__links {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 3rem;
   margin-top: 3rem;
 }

@@ -1,7 +1,5 @@
 .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flexItem(space-between, center);
     width: 100%;
     height: 5rem;
     background-color: $accent;
@@ -12,16 +10,14 @@
     padding-right: 3.5rem;
 
     &__burgermenu {
-        display: flex;
-        flex-direction: column;
+        @include flexCol;
         gap: .4rem;
         cursor: pointer;
 
         span {
             display: block;
             background-color: $darker;
-            width: 2.5rem;
-            height: .4rem;
+            @include wh(2.5rem, .4rem);
             border-radius: 6.6rem;
             transition: 0.5s ease-in-out;
         }
@@ -29,8 +25,7 @@
 
     &__logoutbutton {
         a {
-            display: flex;
-            align-items: center;
+            @include flexItem('', center);
             gap: .6rem;
             color: $darker;
             text-decoration: none;
@@ -41,41 +36,33 @@
 .topbar.open {
     span {
         &:nth-of-type(1) {
-            width: 0;
-            height: 0;
+            @include wh(0, 0);
         }
 
         &:nth-of-type(2) {
-            transform: rotate(45deg) translateY(.7rem) translateX(.2rem);
+            @include spin(45deg, .2rem, .7rem);
         }
 
         &:nth-of-type(3) {
-            transform: rotate(-45deg) translateY(-.3rem) translateX(-.1rem);
+            @include spin(-45deg, -.1rem, -.3rem);
         }
 
         &:nth-of-type(4) {
-            width: 0;
-            height: 0;
+            @include wh(0, 0);
         }
     }
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flexCol('', center);
     gap: 5rem;
     background-color: $darker;
-    height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
+    @include posItem(fixed, 0, '', '', 0);
     overflow-x: hidden;
     padding-top: 6rem;
     transition: 0.5s;
-    width: 0rem;
-    // width: 33rem;
+    @include wh(0rem, 100%);
+    z-index: 1;
 
     .userinfo {
         display: flex;
@@ -84,16 +71,13 @@
         &__left {
             .circle {
                 background-color: $accent;
-                width: 7.7rem;
-                height: 7.7rem;
+                @include wh(7.7rem, 7.7rem);
                 border-radius: 50%;
             }
 
             .circle::after {
                 content: url('../../assets/images/user-image-navbar.png');
-                position: relative;
-                bottom: .5rem;
-                left: .5rem;
+                @include posItem(relative, '', '', .5rem, .5rem);
             }
         }
 
@@ -104,8 +88,7 @@
     }
 
     &__links {
-        display: flex;
-        flex-direction: column;
+        @include flexCol();
         gap: 3rem;
         margin-top: 3rem;
     }
