@@ -1,3 +1,4 @@
+// Burger button
 const toggle = document.querySelector(".topbar__burgermenu");
 const topbar = document.querySelector(".topbar");
 const sidebar = document.querySelector(".sidebar");

@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="../assets/fonts/Nunito/fonts.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <title>Krentzackary Motor Parts</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.css">
+ <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
+ <link rel="stylesheet" href="../assets/fonts/Nunito/fonts.css">
+ <link rel="stylesheet" href="../css/main.css">
+ <title>Krentzackary Motor Parts</title>
 </head>
-<body class="loginBody">
-    <div class="banner">
-        <div class="container">
-            <img src="../assets/images/logo-login.png" alt="Krentzackary Motor Parts & Accesories">
+<body class="login-body">
+ <div class="overlay"></div>
+ <div class="popup-message">
+  <div class="popup-message__header-error">
+   <div class="popup-message__container">
+    <div class="popup-message__wrapper">
+     <h4>Login Failed</h4>
 
-            <div class="banner__login">
-                <div class="banner__login__user">
-                    <div>
-                        <i class="fa-solid fa-user fa-2xl"></i>
-                        <h3>User Name</h3>
-                    </div>
+     <div class="popup-message__header-exit">
+      <span></span>
+      <span></span>
+     </div>
+    </div>
+   </div>
+  </div>
 
-                    <input type="text">
-                </div>                
+  <div class="popup-message__body">
+   <div class="popup-message__container">
+    <p>Login failed, wrong username or password.</p>
+   </div>
+  </div>
+ </div>
 
-                <div class="banner__login__password">
-                    <div>
-                        <i class="fa-solid fa-key fa-2xl"></i>
-                        <h3>Password</h3>
-                    </div>
+ <div class="banner">
+  <div class="container">
+   <img src="../assets/images/logo-login.png" alt="Krentzackary Motor Parts & Accesories">
 
-                    <input type="password">
-                </div>
+   <div class="banner__login">
+    <div class="banner__login__user">
+     <div>
+         <i class="fa-solid fa-user fa-2xl"></i>
+         <h3>User Name</h3>
+     </div>
 
-                <a href="../html/dashboard.html" class="button">Login</a>
-            </div>
-        </div>
+     <input type="text">
     </div>
 
-    <footer>
-        <div class="container">
-            <h4>Krentzackary Motor Parts and Accesories©</h4>
+    <div class="banner__login__password">
+     <div>
+         <i class="fa-solid fa-key fa-2xl"></i>
+         <h3>Password</h3>
+     </div>
 
-            <h4>2023</h4>
-        </div>
-    </footer>
+     <input type="password">
+    </div>
+
+    <a href="javascript:void(0)" class="button login-button">Login</a>
+   </div>
+  </div>
+ </div>
+
+ <footer class="login-footer">
+  <div class="container">
+   <h4>Krentzackary Motor Parts and Accesories©</h4>
+
+   <h4>2023</h4>
+  </div>
+ </footer>
 </body>
+<script src="../js/popup-script.js"></script>
 </html>
