@@ -37,6 +37,26 @@ li {
   line-height: 1;
 }
 
+button {
+  background-color: #e5e7e6;
+  border-radius: 6.6rem;
+  color: #32373a;
+  width: 20rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #ff8e00;
+}
+button.selected {
+  background-color: #ff8e00;
+}
+
 a.button {
   background-color: #e5e7e6;
   border-radius: 6.6rem;
@@ -64,7 +84,7 @@ input {
 }
 
 .overlay {
-  display: none;
+  display: block;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -77,11 +97,11 @@ input {
   z-index: 1;
 }
 .overlay.open {
-  display: block;
+  display: none;
 }
 
 .popup-message {
-  display: none;
+  display: block;
   z-index: 2;
   position: fixed;
   left: 50;
@@ -133,7 +153,7 @@ input {
   color: #e5e7e6;
 }
 .popup-message.open {
-  display: block;
+  display: none;
 }
 
 .topbar {
@@ -302,13 +322,9 @@ input {
   width: 50%;
 }
 .banner__login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #32373a;
   padding: 5rem 5rem 12rem 5rem;
   border-radius: 3.3rem;
-  gap: 3rem;
 }
 .banner__login i {
   color: #ff8e00;
@@ -318,6 +334,12 @@ input {
 }
 .banner__login input {
   padding: 1.5rem 7rem;
+}
+.banner__login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 .banner__login__user div {
   display: flex;

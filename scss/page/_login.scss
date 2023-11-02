@@ -18,13 +18,14 @@
   }
 
   &__login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // html leftover
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // gap: 3rem;
     background-color: $darker;
     padding: 5rem 5rem 12rem 5rem;
     border-radius: 3.3rem;
-    gap: 3rem;
 
     i {
       color: $accent;
@@ -36,6 +37,13 @@
 
     input {
       padding: 1.5rem 7rem;
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
     }
 
     &__user {
