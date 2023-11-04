@@ -4,9 +4,7 @@
         height: 9rem;
     }
 
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    @include posItem(fixed, '', '', 0, 0);
     // @include placeItem()
     width: 100%;
     overflow-x: hidden;
