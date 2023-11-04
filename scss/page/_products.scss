@@ -1,68 +1,94 @@
-// .productSection {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     background-color: $darker;
-//     padding: 4rem 3rem 3rem 3rem;
+.productSection {
+    // @include flexItem(center, center);
+    background-color: $darker;
+    padding: 0rem 3rem 3rem 3rem;
+    max-width: 1000rem;
+    border-radius: 3rem;
+    
+    
 
+    .productsText {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 3rem 0rem 3rem 0rem;
 
-//     .productsText {
-//         display: flex;
-//         justify-content: space-evenly;
-//         padding: 3rem 0rem 3rem 0rem;
-
-
-//         .View {
-//             color: $light;
-
+        .View {
+            color: $light;
             
-//             .ProductsButton {
-//                 display: flex;
-//                 align-items: center;
-//                 gap: 1rem;
-//                 text-decoration: none;
-//                 color: $light;
-//                 transition-duration: 0.4s;
-//                 cursor: pointer;
+            
+            .ProductsButton {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                text-decoration: none;
+                color: $light;
+                transition-duration: 0.4s;
+                cursor: pointer;
                         
-//                 &:hover {
-//                     color: $accent;
-//                 }
-//             }
-            
-
-          
-//         }
-//         .Add {
-//             color: $light;
+                &:hover {
+                    color: $accent;
+                }
+            }
+        }
+        .Add {
+            color: $light;
 
             
-//             .ProductsButton {
-//                 display: flex;
-//                 align-items: center;
-//                 gap: 1rem;
-//                 text-decoration: none;
-//                 color: $light;
-//                 transition-duration: 0.4s;
-//                 cursor: pointer;
+            .ProductsButton {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                text-decoration: none;
+                color: $light;
+                transition-duration: 0.4s;
+                cursor: pointer;
                         
-//                 &:hover {
-//                     color: $accent;
-//                 }
-//             }
+                &:hover {
+                    color: $accent;
+                }
+            }
             
 
-//         }
-//     }
+        }
+    }
 
-//     .ViewProducts {
-//         display: flex;
-//         justify-content: center;
-//         background-color: $light;
-//         padding: 1rem;
+    .ViewProductsTable {
+        display: flex;
+        justify-content: center;
+        background-color: $light;
+        text-align: center;
+        border-collapse: collapse;
+        border: .3rem solid $darker;
+        border-radius: 3rem;
+        white-space: nowrap;
 
-//         .Type {
-//             background-color: $accent;
-//         }
-//     }
-// }
+        // .Type {
+        //     background-color: $accent;
+        // }
+
+        .IdBorder {
+            background-color: $accent;
+            border-top-left-radius: 2rem;
+        }
+
+        .ActionBorder {
+            background-color: $accent;
+            border-top-right-radius: 2rem;
+        }
+
+        th {
+            background-color: $accent;
+            padding: .5rem 2rem;    
+            border-collapse: collapse;
+            border: .3rem solid $darker;
+            
+        }
+
+        td {
+            padding: 5rem 3rem;
+            border-collapse: collapse;
+            border: .3rem solid $darker;
+            
+        }
+    }
+}

@@ -53,13 +53,13 @@
     <?php
         if(!empty($error_message)) { ?>
             <div class="overlay"></div>
-             <div class="popup-message">
-              <div class="popup-message__header-error">
-               <div class="popup-message__container">
-                <div class="popup-message__wrapper">
+             <div class="popup">
+              <div class="popup__header-error">
+               <div class="popup__container">
+                <div class="popup__wrapper">
                  <h4><?= $error_message ?></h4>
  
-                 <div class="popup-message__header-exit">
+                 <div class="popup__header-exit">
                   <span></span>
                   <span></span>
                  </div>
@@ -67,8 +67,8 @@
                </div>
               </div>
      
-              <div class="popup-message__body">
-               <div class="popup-message__container">
+              <div class="popup__body">
+               <div class="popup__container">
                 <p>Login failed, wrong username or password.</p>
                </div>
               </div>
