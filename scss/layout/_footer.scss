@@ -1,13 +1,13 @@
 .login-footer {
-    .container {
-        @include flexItem(space-between, center);
-        height: 9rem;
-    }
+  .container {
+    @include flexItem(space-between, center);
+    height: 9rem;
+  }
 
-    @include posItem(fixed, '', '', 0, 0);
-    // @include placeItem()
-    width: 100%;
-    overflow-x: hidden;
-    background-color: $darker;
-    color: $light;
+  @include posItem(fixed, '', '', 0, 0);
+  // @include placeItem()
+  width: 100%;
+  overflow-x: hidden;
+  background-color: $darker;
+  color: $light;
 }

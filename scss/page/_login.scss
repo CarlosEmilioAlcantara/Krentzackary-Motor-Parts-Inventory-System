@@ -42,17 +42,17 @@
 
     &__user {
       div {
-          @include flexItem('', center);
-          gap: 1rem;
-          margin-bottom: 2rem;
+        @include flexItem('', center);
+        gap: 1rem;
+        margin-bottom: 2rem;
       }
     }
 
     &__password {
       div {
-          @include flexItem('', center);
-          gap: 1rem;
-          margin-bottom: 2rem;
+        @include flexItem('', center);
+        gap: 1rem;
+        margin-bottom: 2rem;
       }
     }
   }

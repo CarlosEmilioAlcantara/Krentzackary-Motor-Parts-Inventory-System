@@ -1,94 +1,83 @@
 .productSection {
-    // @include flexItem(center, center);
-    background-color: $darker;
-    padding: 0rem 3rem 3rem 3rem;
-    max-width: 1000rem;
+  // @include flexItem(center, center);
+  background-color: $darker;
+  padding: 0rem 3rem 3rem 3rem;
+  max-width: 1000rem;
+  border-radius: 3rem;
+  
+  .productsText {
+    @include flexItem(space-evenly, '');
+    padding: 3rem 0rem 3rem 0rem;
+
+    .View {
+      color: $light;
+      
+      .ProductsButton {
+        @include flexItem('', center);
+        gap: 1rem;
+        text-decoration: none;
+        color: $light;
+        transition-duration: 0.4s;
+        cursor: pointer;
+                
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+
+    .Add {
+      color: $light;
+
+      .ProductsButton {
+        @include flexItem('', center);
+        gap: 1rem;
+        text-decoration: none;
+        color: $light;
+        transition-duration: 0.4s;
+        cursor: pointer;
+                
+        &:hover {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  .ViewProductsTable {
+    @include flexItem(center, '');
+    background-color: $light;
+    text-align: center;
+    border-collapse: collapse;
+    border: .3rem solid $darker;
     border-radius: 3rem;
-    
-    
+    white-space: nowrap;
 
-    .productsText {
-        display: flex;
-        justify-content: space-evenly;
-        padding: 3rem 0rem 3rem 0rem;
+    // .Type {
+    //     background-color: $accent;
+    // }
 
-        .View {
-            color: $light;
-            
-            
-            .ProductsButton {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                text-decoration: none;
-                color: $light;
-                transition-duration: 0.4s;
-                cursor: pointer;
-                        
-                &:hover {
-                    color: $accent;
-                }
-            }
-        }
-        .Add {
-            color: $light;
-
-            
-            .ProductsButton {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                text-decoration: none;
-                color: $light;
-                transition-duration: 0.4s;
-                cursor: pointer;
-                        
-                &:hover {
-                    color: $accent;
-                }
-            }
-            
-
-        }
+    .IdBorder {
+      background-color: $accent;
+      border-top-left-radius: 2rem;
     }
 
-    .ViewProductsTable {
-        display: flex;
-        justify-content: center;
-        background-color: $light;
-        text-align: center;
-        border-collapse: collapse;
-        border: .3rem solid $darker;
-        border-radius: 3rem;
-        white-space: nowrap;
-
-        // .Type {
-        //     background-color: $accent;
-        // }
-
-        .IdBorder {
-            background-color: $accent;
-            border-top-left-radius: 2rem;
-        }
-
-        .ActionBorder {
-            background-color: $accent;
-            border-top-right-radius: 2rem;
-        }
-
-        th {
-            background-color: $accent;
-            padding: .5rem 2rem;    
-            border-collapse: collapse;
-            border: .3rem solid $darker;
-            
-        }
-
-        td {
-            padding: 5rem 3rem;
-            border-collapse: collapse;
-            border: .3rem solid $darker;
-            
-        }
+    .ActionBorder {
+      background-color: $accent;
+      border-top-right-radius: 2rem;
     }
+
+    th {
+      background-color: $accent;
+      padding: .5rem 2rem;    
+      border-collapse: collapse;
+      border: .3rem solid $darker;
+    }
+
+    td {
+      padding: 5rem 3rem;
+      border-collapse: collapse;
+      border: .3rem solid $darker;
+    }
+  }
 }

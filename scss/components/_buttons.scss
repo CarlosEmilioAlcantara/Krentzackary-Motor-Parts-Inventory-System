@@ -1,45 +1,45 @@
 button {
-    background-color: $light;
-    // border: none;
-    border-radius: 6.6rem;
-    color: $darker;
-    width: 20rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.6rem;
-    line-height: 3.2;
-    transition-duration: 0.4s;
-    cursor: pointer;
+  background-color: $light;
+  // border: none;
+  border-radius: 6.6rem;
+  color: $darker;
+  width: 20rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
 
-    &:hover {
-        background-color: $accent;
-    }
+  &:hover {
+      background-color: $accent;
+  }
 
-    &.selected {
-        background-color: $accent;
-    }
+  &.selected {
+      background-color: $accent;
+  }
 }
 
 a.button {
-    background-color: $light;
-    // border: none;
-    border-radius: 6.6rem;
-    color: $darker;
-    width: 20rem;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.6rem;
-    line-height: 3.2;
-    transition-duration: 0.4s;
-    cursor: pointer;
+  background-color: $light;
+  // border: none;
+  border-radius: 6.6rem;
+  color: $darker;
+  width: 20rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
 
-    &:hover {
-        background-color: $accent;
-    }
+  &:hover {
+      background-color: $accent;
+  }
 
-    &.selected {
-        background-color: $accent;
-    }
+  &.selected {
+      background-color: $accent;
+  }
 }
