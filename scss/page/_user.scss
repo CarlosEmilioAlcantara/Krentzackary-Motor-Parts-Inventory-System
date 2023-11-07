@@ -1,0 +1,34 @@
+.user-info {
+  display: none;
+  @include wh(61rem, 51.5rem);
+  @include flexCol(center, center);
+  gap: 5rem;
+  background-color: $darker;
+  color: $light;
+  border-radius: 3.3rem;
+
+  .circle {
+    background-color: $accent;
+    @include wh(7.7rem, 7.7rem);
+    border-radius: 50%;
+
+    &::after {
+      content: url('../../assets/images/user-image-navbar.png');
+      @include posItem(relative, '', '', .5rem, .5rem);
+    }
+  }
+
+  &__name {
+    @include flexCol(center, center);
+  }
+
+  &__number {
+    @include flexCol(center, center);
+  }
+}
+
+.edit-user-popup {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1;
+}

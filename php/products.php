@@ -88,56 +88,6 @@
                     <td>Edit or Delete</td>
                 </tr>
             </table>
+            DITO SA BABA NG TABLE!
     </section>
-
-    <section class="AddProductSection">
-        <div class="AddProductsText">
-            <div class="AddView">
-                <a href="#" class="AddProductsButton"><i   class="fa-solid fa-eye fa-lg"></i>
-                <h3>View Product</h3></a>
-            </div>
-            <div class="AddProductsClick">
-                <a href="#" class="AddProductsButton"><i   class="fa-solid fa-tag fa-lg"></i>
-                <h3>Add Product</h3></a>
-            </div>
-        </div>
-        <div class="AddProductEntry">
-            <div class="EntryProductName">
-                <h4>Product Name</h4>
-                <input class="TopText" type="text">
-            </div>
-            <div class="EntryCategories">
-                <h4>Categories</h4>
-                <input class="TopText" type="text">
-            </div>
-        </div>
-
-        <div class="EntryDescription">
-            <h4>Description</h4>
-            <textarea class="DescriptionText" name="" id="" cols="125" rows="7"></textarea>
-        </div>
-
-        <div class="EntryAttributes">
-            <h4>Attributes</h4>
-            <textarea class="AttributesText" name="" id="" cols="125" rows="9"></textarea>
-        </div>
-
-        <div class="AddProductEntries">
-            <div class="EntryAmount">
-                <h4>Amount</h4>
-                <input class="BottomText" type="number">
-            </div>
-            <div class="EntryLocation">
-                <h4>Location</h4>
-                <input class="BottomText" type="text">
-            </div>
-        </div>
-
-        <div class="confirmation-buttons">
-            <a href="" class="cancel">Cancel</a>
-            <a href="" class="confirm">Confirm</a>
-        </div>
 </body>
-
-<script src="../js/nav-script.js"></script>
-</html>

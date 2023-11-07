@@ -77,10 +77,67 @@ a.button.selected {
   background-color: #ff8e00;
 }
 
+.push-to-right {
+  text-align: right;
+}
+
+.confirmation-buttons {
+  text-align: right;
+}
+
+.cancel {
+  margin-right: 1rem;
+}
+
+a.cancel {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.2rem solid #c21a24;
+  border-radius: 6.6rem;
+  color: #c21a24;
+  width: 12rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+a.cancel:hover {
+  background-color: #c21a24;
+  color: #e5e7e6;
+}
+
+a.confirm {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.2rem solid #077b43;
+  border-radius: 6.6rem;
+  color: #077b43;
+  width: 12rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+a.confirm:hover {
+  background-color: #077b43;
+  color: #e5e7e6;
+  border: none;
+}
+
 input {
   background-color: #e5e7e6;
   border: none;
   border-radius: 3.3rem;
+}
+
+.input__popup {
+  padding: 1.3rem 16.6rem;
+  padding-left: 2rem;
+  border-radius: 0 3.3rem 3.3rem 3.3rem;
 }
 
 .overlay {
@@ -218,8 +275,39 @@ input {
   padding-top: 1.3rem;
   color: #e5e7e6;
 }
+.popup__body__group {
+  display: flex;
+  justify-content: "" "";
+  align-items: flex-start;
+  gap: 12rem;
+}
+.popup__body__edit {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.popup__body__edit__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff8e00;
+  color: #32373a;
+  width: 17.8rem;
+  height: 4rem;
+  border-top-left-radius: 3.3rem;
+  border-top-right-radius: 3.3rem;
+}
 .popup.open {
   display: none;
+}
+
+.edit-user-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: "";
+  align-items: "";
+  gap: 5rem;
 }
 
 .topbar {
@@ -328,7 +416,10 @@ input {
 }
 .sidebar__footer {
   position: absolute;
+  top: "";
+  right: "";
   bottom: 0;
+  left: "";
   width: 100%;
   background-color: #ff8e00;
   color: #32373a;
@@ -362,6 +453,8 @@ input {
 
 .login-footer {
   position: fixed;
+  top: "";
+  right: "";
   bottom: 0;
   left: 0;
   width: 100%;
@@ -387,8 +480,8 @@ input {
 }
 .banner .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: space-between;
 }
 .banner img {
   width: 50%;
@@ -410,17 +503,20 @@ input {
 .banner__login__form {
   display: flex;
   flex-direction: column;
+  justify-content: "";
   align-items: center;
   gap: 3rem;
 }
 .banner__login__user div {
   display: flex;
+  justify-content: "";
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
 }
 .banner__login__password div {
   display: flex;
+  justify-content: "";
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
@@ -431,10 +527,12 @@ input {
   padding: 0rem 3rem 3rem 3rem;
   max-width: 1000rem;
   border-radius: 3rem;
+  display: none;
 }
 .productSection .productsText {
   display: flex;
   justify-content: space-evenly;
+  align-items: "";
   padding: 3rem 0rem 3rem 0rem;
 }
 .productSection .productsText .View {
@@ -442,6 +540,7 @@ input {
 }
 .productSection .productsText .View .ProductsButton {
   display: flex;
+  justify-content: "";
   align-items: center;
   gap: 1rem;
   text-decoration: none;
@@ -457,6 +556,7 @@ input {
 }
 .productSection .productsText .Add .ProductsButton {
   display: flex;
+  justify-content: "";
   align-items: center;
   gap: 1rem;
   text-decoration: none;
@@ -470,6 +570,7 @@ input {
 .productSection .ViewProductsTable {
   display: flex;
   justify-content: center;
+  align-items: "";
   background-color: #e5e7e6;
   text-align: center;
   border-collapse: collapse;
@@ -495,4 +596,148 @@ input {
   padding: 5rem 3rem;
   border-collapse: collapse;
   border: 0.3rem solid #32373a;
+}
+
+.AddProductSection {
+  background-color: #32373a;
+  padding: 0rem 3rem 3rem 3rem;
+  max-width: auto;
+  border-radius: 3rem;
+  margin-top: 7rem;
+}
+.AddProductSection .AddProductsText {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3rem 0rem 3rem 0rem;
+}
+.AddProductSection .AddProductsText .AddView {
+  color: #e5e7e6;
+}
+.AddProductSection .AddProductsText .AddView .AddProductsButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #e5e7e6;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.AddProductSection .AddProductsText .AddView .AddProductsButton:hover {
+  color: #ff8e00;
+}
+.AddProductSection .AddProductsText .AddProductsClick {
+  color: #e5e7e6;
+}
+.AddProductSection .AddProductsText .AddProductsClick .AddProductsButton {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #e5e7e6;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.AddProductSection .AddProductsText .AddProductsClick .AddProductsButton:hover {
+  color: #ff8e00;
+}
+.AddProductSection h4 {
+  background-color: #ff8e00;
+  display: flex;
+  justify-content: center;
+  border-top-right-radius: 3rem;
+  border-top-left-radius: 3rem;
+  max-width: 20rem;
+  padding: 0.7rem 0rem;
+}
+.AddProductSection .AddProductEntry {
+  display: flex;
+  gap: 5rem;
+  margin-bottom: 3rem;
+}
+.AddProductSection .AddProductEntry .TopText {
+  box-sizing: border-box;
+  padding: 1.5rem 25rem;
+  padding-left: 1.5rem;
+  border-top-left-radius: 0rem;
+  width: 100%;
+  resize: none;
+}
+.AddProductSection .EntryDescription {
+  margin-bottom: 3rem;
+}
+.AddProductSection .EntryDescription .DescriptionText {
+  background-color: #e5e7e6;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-radius: 3.3rem;
+  border-top-left-radius: 0rem;
+}
+.AddProductSection .EntryAttributes {
+  margin-bottom: 3rem;
+}
+.AddProductSection .EntryAttributes .AttributesText {
+  background-color: #e5e7e6;
+  padding-left: 1.5rem;
+  padding-top: 0.5rem;
+  border-radius: 3.3rem;
+  border-top-left-radius: 0rem;
+}
+.AddProductSection .AddProductEntries {
+  display: flex;
+  gap: 5rem;
+  margin-bottom: 3rem;
+}
+.AddProductSection .AddProductEntries .BottomText {
+  box-sizing: border-box;
+  padding: 1.5rem 25rem;
+  padding-left: 1.5rem;
+  border-top-left-radius: 0rem;
+  width: 100%;
+  resize: none;
+}
+
+.user-info {
+  display: none;
+  width: 61rem;
+  height: 51.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  background-color: #32373a;
+  color: #e5e7e6;
+  border-radius: 3.3rem;
+}
+.user-info .circle {
+  background-color: #ff8e00;
+  width: 7.7rem;
+  height: 7.7rem;
+  border-radius: 50%;
+}
+.user-info .circle::after {
+  content: url("../../assets/images/user-image-navbar.png");
+  position: relative;
+  top: "";
+  right: "";
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+.user-info__name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.user-info__number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-user-popup {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1;
 }/*# sourceMappingURL=main.css.map */
