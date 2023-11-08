@@ -1,8 +1,8 @@
 // Popup message
 // const ewan = document.querySelector(".login-button");
-const exit = document.querySelector(".popup-message__header-exit");
+const exit = document.querySelector(".popup__header-exit");
 const overlay = document.querySelector(".overlay");
-const popup = document.querySelector(".popup-message");
+const popup = document.querySelector(".popup");
 
 // ewan.addEventListener("click", () => {
 //     overlay.classList.toggle("open");
