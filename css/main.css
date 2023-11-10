@@ -480,8 +480,8 @@ input {
 }
 .banner .container {
   display: flex;
-  justify-content: center;
-  align-items: space-between;
+  justify-content: space-between;
+  align-items: center;
 }
 .banner img {
   width: 50%;

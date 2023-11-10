@@ -6,7 +6,10 @@
   margin-bottom: 10rem;
 
   .container {
-    @include flexItem(center, space-between);
+    // @include flexItem(space-between, center);  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   img {
