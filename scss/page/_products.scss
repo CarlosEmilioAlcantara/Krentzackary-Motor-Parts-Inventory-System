@@ -47,65 +47,73 @@
     }
   }
 
+  .typebox {
+    // margin-bottom: 2.5rem;
+  }
+
+  .Type {
+    // display: block;
+    position: sticky;
+    // margin-left: .3rem;
+    // margin-top: -.5rem;
+    border-collapse: collapse;
+
+    th {
+      background-color: $accent;
+      // padding: .5rem 3.9rem;    
+      border-left: .3rem solid $darker;
+    }
+
+    .th-id {
+      width: 7.1rem;
+    }
+
+    .th-product {
+      width: 14.1rem;
+    }
+
+    .th-desc {
+      width: 23.4rem;
+    }
+
+    .th-ctg {
+      width: 14.1rem;
+    }
+
+    .th-attr {
+      width: 21rem;
+    }
+
+    .th-amnt {
+      width: 8.2rem;
+    }
+
+    .th-loc {
+      width: 15.3rem;
+    }
+
+    .th-act {
+      width: 16.1rem;
+    }
+    
+    .IdBorder {
+      background-color: $accent;
+      border-top-left-radius: 3.3rem;
+    }
+
+    .ActionBorder {
+      background-color: $accent;
+      border-top-right-radius: 3.3rem;
+    }
+  }
+
   .table-box {
     height: 60rem;
+    position: sticky;
     overflow: auto;
-
-    .Type {
-      position: fixed;
-      margin-left: .2rem;
-      margin-top: -.5rem;
-      border-collapse: collapse;
-      
-
-      th {
-        background-color: $accent;
-        // padding: .5rem 3.9rem;    
-        border: .3rem solid $darker;
-      }
-
-      .th-id {
-        width: 7.1rem;
-      }
-
-      .th-product {
-        width: 14.1rem;
-      }
-
-      .th-desc {
-        width: 23.4rem;
-      }
-
-      .th-ctg {
-        width: 14.1rem;
-      }
-
-      .th-attr {
-        width: 21rem;
-      }
-
-      .th-amnt {
-        width: 8.2rem;
-      }
-
-      .th-loc {
-        width: 15.3rem;
-      }
-
-      .th-act {
-        width: 16.1rem;
-      }
-      
-      .IdBorder {
-        background-color: $accent;
-        border-top-left-radius: 2rem;
-      }
-  
-      .ActionBorder {
-        background-color: $accent;
-        border-top-right-radius: 2rem;
-      }
-    }
+    // display: flex;
+    // flex-direction: column;
+    // gap: 5rem;
 
     // th {
     //   background-color: $accent;
@@ -121,7 +129,7 @@
       text-align: center;
       border-collapse: collapse;
       border: .3rem solid $darker;
-      border-radius: 3rem;
+      // border-radius: 3rem;
       white-space: nowrap;
         
       td {

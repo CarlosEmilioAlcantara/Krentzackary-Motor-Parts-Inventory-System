@@ -568,51 +568,50 @@ input {
 .productSection .productsText .Add .ProductsButton:hover {
   color: #ff8e00;
 }
-.productSection .table-box {
-  height: 60rem;
-  overflow: auto;
-}
-.productSection .table-box .Type {
-  position: fixed;
-  margin-left: 0.2rem;
-  margin-top: -0.5rem;
+.productSection .Type {
+  position: sticky;
   border-collapse: collapse;
 }
-.productSection .table-box .Type th {
+.productSection .Type th {
   background-color: #ff8e00;
-  border: 0.3rem solid #32373a;
+  border-left: 0.3rem solid #32373a;
 }
-.productSection .table-box .Type .th-id {
+.productSection .Type .th-id {
   width: 7.1rem;
 }
-.productSection .table-box .Type .th-product {
+.productSection .Type .th-product {
   width: 14.1rem;
 }
-.productSection .table-box .Type .th-desc {
+.productSection .Type .th-desc {
   width: 23.4rem;
 }
-.productSection .table-box .Type .th-ctg {
+.productSection .Type .th-ctg {
   width: 14.1rem;
 }
-.productSection .table-box .Type .th-attr {
+.productSection .Type .th-attr {
   width: 21rem;
 }
-.productSection .table-box .Type .th-amnt {
+.productSection .Type .th-amnt {
   width: 8.2rem;
 }
-.productSection .table-box .Type .th-loc {
+.productSection .Type .th-loc {
   width: 15.3rem;
 }
-.productSection .table-box .Type .th-act {
+.productSection .Type .th-act {
   width: 16.1rem;
 }
-.productSection .table-box .Type .IdBorder {
+.productSection .Type .IdBorder {
   background-color: #ff8e00;
-  border-top-left-radius: 2rem;
+  border-top-left-radius: 3.3rem;
 }
-.productSection .table-box .Type .ActionBorder {
+.productSection .Type .ActionBorder {
   background-color: #ff8e00;
-  border-top-right-radius: 2rem;
+  border-top-right-radius: 3.3rem;
+}
+.productSection .table-box {
+  height: 60rem;
+  position: sticky;
+  overflow: auto;
 }
 .productSection .table-box .ViewProductsTable {
   display: block;
@@ -620,7 +619,6 @@ input {
   text-align: center;
   border-collapse: collapse;
   border: 0.3rem solid #32373a;
-  border-radius: 3rem;
   white-space: nowrap;
 }
 .productSection .table-box .ViewProductsTable td {
