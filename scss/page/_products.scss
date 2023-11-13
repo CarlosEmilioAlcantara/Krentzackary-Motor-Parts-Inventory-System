@@ -47,25 +47,25 @@
     }
   }
 
-  .typebox {
-    // margin-bottom: 2.5rem;
-  }
+  // .typebox {
+  //   // margin-bottom: 2.5rem;
+  // }
 
   .Type {
     // display: block;
     position: sticky;
     // margin-left: .3rem;
-    // margin-top: -.5rem;
+    margin-top: -.5rem;
     border-collapse: collapse;
 
     th {
       background-color: $accent;
       // padding: .5rem 3.9rem;    
-      border-left: .3rem solid $darker;
+      border-left: .1rem solid $darker;
     }
 
     .th-id {
-      width: 7.1rem;
+      width: 7.4rem;
     }
 
     .th-product {

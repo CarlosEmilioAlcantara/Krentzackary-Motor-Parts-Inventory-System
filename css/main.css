@@ -570,14 +570,15 @@ input {
 }
 .productSection .Type {
   position: sticky;
+  margin-top: -0.5rem;
   border-collapse: collapse;
 }
 .productSection .Type th {
   background-color: #ff8e00;
-  border-left: 0.3rem solid #32373a;
+  border-left: 0.1rem solid #32373a;
 }
 .productSection .Type .th-id {
-  width: 7.1rem;
+  width: 7.4rem;
 }
 .productSection .Type .th-product {
   width: 14.1rem;
