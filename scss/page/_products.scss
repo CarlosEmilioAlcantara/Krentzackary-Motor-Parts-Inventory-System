@@ -3,7 +3,7 @@
   background-color: $darker;
   padding: 0rem 3rem 3rem 3rem;
   max-width: 1000rem;
-  height: 80rem;
+  @include wh('', 80rem);
   border-radius: 3rem;
   margin-top: 5rem;
   // display: none;
