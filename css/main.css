@@ -37,6 +37,15 @@ li {
   line-height: 1;
 }
 
+.table-box-buttons {
+  border: none;
+  width: auto;
+}
+.table-box-buttons:hover {
+  color: #ff8e00;
+  background-color: #e5e7e6;
+}
+
 button {
   background-color: #e5e7e6;
   border-radius: 6.6rem;
@@ -140,8 +149,15 @@ input {
   border-radius: 0 3.3rem 3.3rem 3.3rem;
 }
 
+.textarea-popup {
+  resize: none;
+  white-space: nowrap;
+  border-radius: 0 3.3rem 3.3rem 3.3rem;
+  border: 0;
+}
+
 .overlay {
-  display: block;
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -154,31 +170,31 @@ input {
   z-index: 1;
 }
 .overlay.open {
-  display: none;
+  display: block;
 }
 
-.popup-edit__header {
+.popup-edit-header {
   color: #32373a;
   background-color: #ff8e00;
   height: 4rem;
   border-top-left-radius: 3.3rem;
   border-top-right-radius: 3.3rem;
 }
-.popup-edit__header__exit {
+.popup-edit-header__exit {
   padding-bottom: 0.8rem;
   cursor: pointer;
 }
-.popup-edit__header__exit span {
+.popup-edit-header__exit span {
   display: block;
   background-color: #32373a;
   width: 2.5rem;
   height: 0.4rem;
   border-radius: 6.6rem;
 }
-.popup-edit__header__exit span:nth-of-type(1) {
+.popup-edit-header__exit span:nth-of-type(1) {
   transform: rotate(45deg) translateY(0.7rem) translateX(0.2rem);
 }
-.popup-edit__header__exit span:nth-of-type(2) {
+.popup-edit-header__exit span:nth-of-type(2) {
   transform: rotate(-45deg) translateY(-0.1rem) translateX(-0.4rem);
 }
 
@@ -187,10 +203,11 @@ input {
   z-index: 2;
   position: fixed;
   width: 90rem;
-  height: 77rem;
+  height: 80rem;
   background-color: #32373a;
   border-radius: 3.3rem;
   transition: 0.5s;
+  display: none;
 }
 .popup-edit-product__container {
   padding-top: 0.8rem;
@@ -224,7 +241,7 @@ input {
   color: #e5e7e6;
 }
 .popup-edit-product.open {
-  display: none;
+  display: block;
 }
 
 .popup {
@@ -277,8 +294,8 @@ input {
 }
 .popup__body__group {
   display: flex;
-  justify-content: "" "";
-  align-items: flex-start;
+  justify-content: "";
+  align-items: "";
   gap: 12rem;
 }
 .popup__body__edit {
@@ -526,6 +543,7 @@ input {
   background-color: #32373a;
   padding: 0rem 3rem 3rem 3rem;
   max-width: 1000rem;
+  width: "";
   height: 80rem;
   border-radius: 3rem;
   margin-top: 5rem;

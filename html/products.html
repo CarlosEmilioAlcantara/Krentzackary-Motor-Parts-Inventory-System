@@ -1,245 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
-    <link rel="stylesheet" href="../assets/fonts/Nunito/fonts.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <title>Products - Krentzackary Motor Parts</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="../assets/fontawesome/css/fontawesome.css">
+ <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
+ <link rel="stylesheet" href="../assets/fonts/Nunito/fonts.css">
+ <link rel="stylesheet" href="../css/main.css">
+ <title>Products - Krentzackary Motor Parts</title>
 </head>
 <body class="navbody">
-    <nav class="topbar">
-        <div class="topbar__burgermenu">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-        </div>
+ <div class="overlay"></div>
+ <div class="popup-edit-product">
+  <div class="popup-edit-header">
+   <div class="popup__container">
+    <div class="popup__wrapper">
+     <h4>Edit Product</h4>
 
-        <h1>Products</h1>
+     <div class="popup-edit-header__exit">
+      <span></span>
+      <span></span>
+     </div>
+    </div>
+   </div>
+  </div>
+   
+  <div class="popup__body">
+   <div class="popup__container edit-user-group">
+    <div class="popup__body__group">
+     <div class="popup__body__edit">
+      <div class="popup__body__edit__title">
+       <p>Product Name</p>
+      </div>
+ 
+      <input type="text" class="input__popup">
+     </div>
+ 
+     <div class="popup__body__edit">
+      <div class="popup__body__edit__title">
+       <p>Categories</p>
+      </div>
+ 
+      <input type="text" class="input__popup">
+     </div>
+    </div>
 
-        <div class="topbar__logoutbutton">
-            <a href="../html/login.html">
-                <i class="fa-solid fa-power-off fa-xl"></i>
-                <h4>Logout</h4>
-            </a>
-        </div>
-    </nav>
+    <div class="popup__body__group">
+     <div class="popup__body__edit">
+      <div class="popup__body__edit__title">
+       <p>Description</p>
+      </div>
+ 
+      <textarea class="textarea-popup" cols="116.5" rows="7"></textarea>
+     </div>
+    </div>
 
-    <nav class="sidebar">
-        <img src="../assets/images/logo-navbar.png" alt="logo-navbar">
+    <div class="popup__body__group">
+     <div class="popup__body__edit">
+      <div class="popup__body__edit__title">
+       <p>Attributes</p>
+      </div>
+ 
+      <textarea class="textarea-popup" cols="116.5" rows="7"></textarea>
+     </div>
+    </div>
 
-        <div class="userinfo">
-            <div class="userinfo__left">
-                <div class="circle"></div>
-                <!-- <img src="../assets/images/user-image-navbar.png" alt="user-image-navbar" class="orayt"> -->
-            </div>
+    <div class="popup__body__group">
+     <div class="popup__body__edit">
+      <div class="popup__body__edit__title">
+       <p>Amount</p>
+      </div>
+ 
+      <input type="text" class="input__popup">
+     </div>
+ 
+     <div class="popup__body__edit">
+      <div class="popup__body__edit__title">
+       <p>Location</p>
+      </div>
+ 
+      <input type="text" class="input__popup">
+     </div>
+    </div>
 
-            <div class="userinfo__right">
-                <p>Jane Doe</p>
-                <p>ID: 1</p>
-            </div>
-        </div>
+    <div class="push-to-right">
+     <div class="confirmation-buttons">
+      <a href="" class="cancel">Cancel</a>
+      <a href="" class="confirm">Confirm</a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
 
-        <ul class="sidebar__links">
-            <li><a href="../html/dashboard.html" class="button"><i class="fa-solid fa-dashboard fa-xl"></i> Dashboard</a></li>
-            <li><a href="../html/products.html" class="button"><i class="fa-solid fa-tags fa-xl"></i> Products</a></li>
-            <li><a href="../html/user.html" class="button"><i class="fa-solid fa-user fa-xl"></i> User</a></li>
-        </ul>
+ <nav class="topbar">
+  <div class="topbar__burgermenu">
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+  </div>
 
-        <div class="sidebar__footer">
-            <h4 class="companyname">Krentzackary Motor©</h4>
-            <h4 class="year">2023</h4>
-        </div>
-    </nav>
+  <h1>Products</h1>
 
-    <section class="productSection">
-            <div class="productsText">
-                <div class="View">
-                    <a href="#" class="ProductsButton"><i   class="fa-solid fa-eye fa-lg"></i>
-                    <h3>View Product</h3></a>
-                </div>
-                <div class="Add">
-                    <a href="#" class="ProductsButton"><i   class="fa-solid fa-tag fa-lg"></i>
-                    <h3>Add Product</h3></a>
-                </div>
-            </div>
-            <table class="typebox">
-                <tr class="Type">
-                    <th class="th-id IdBorder">ID #</th>
-                    <th class="th-product">Product Name</th>
-                    <th class="th-desc">Description</th>
-                    <th class="th-ctg">Categories</th>
-                    <th class="th-attr">Attributes</th>
-                    <th class="th-amnt">Amount</th>
-                    <th class="th-loc">Location</th>
-                    <th class="th-act ActionBorder">Action</th> 
-                </tr>
-            </table>
-            <div class="table-box">
-                <table class="ViewProductsTable">
-                    <tr class="Entry">
-                        <td>1</td>
-                        <td>Seat Cover</td>
-                        <td>Retero Style Seat Cover</td>
-                        <td>Seat Cover</td>
-                        <td>Material: PU Leather</td>
-                        <td>23</td>
-                        <td>Lalig Branch</td>
-                        <td>Edit or Delete</td>
-                    </tr>
-                    <tr class="Entry">
-                        <td>1</td>
-                        <td>Seat Cover</td>
-                        <td>Retero Style Seat Cover</td>
-                        <td>Seat Cover</td>
-                        <td>Material: PU Leather</td>
-                        <td>23</td>
-                        <td>Lalig Branch</td>
-                        <td>Edit or Delete</td>
-                    </tr>
-                    <tr class="Entry">
-                        <td>1</td>
-                        <td>Seat Cover</td>
-                        <td>Retero Style Seat Cover</td>
-                        <td>Seat Cover</td>
-                        <td>Material: PU Leather</td>
-                        <td>23</td>
-                        <td>Lalig Branch</td>
-                        <td>Edit or Delete</td>
-                    </tr>
-                    <tr class="Entry">
-                        <td>1</td>
-                        <td>Seat Cover</td>
-                        <td>Retero Style Seat Cover</td>
-                        <td>Seat Cover</td>
-                        <td>Material: PU Leather</td>
-                        <td>23</td>
-                        <td>Lalig Branch</td>
-                        <td>Edit or Delete</td>
-                    </tr>
-                    <tr class="Entry">
-                        <td>1</td>
-                        <td>Seat Cover</td>
-                        <td>Retero Style Seat Cover</td>
-                        <td>Seat Cover</td>
-                        <td>Material: PU Leather</td>
-                        <td>23</td>
-                        <td>Lalig Branch</td>
-                        <td>Edit or Delete</td>
-                    </tr>
-                    <tr class="Entry">
-                        <td>1</td>
-                        <td>Seat Cover</td>
-                        <td>Retero Style Seat Cover</td>
-                        <td>Seat Cover</td>
-                        <td>Material: PU Leather</td>
-                        <td>23</td>
-                        <td>Lalig Branch</td>
-                        <td>Edit or Delete</td>
-                    </tr>
-                </table>
-            </div>
-    </section>
+  <div class="topbar__logoutbutton">
+   <a href="../html/login.html">
+    <i class="fa-solid fa-power-off fa-xl"></i>
+    <h4>Logout</h4>
+   </a>
+  </div>
+ </nav>
 
-    <section class="AddProductSection">
-        <div class="AddProductsText">
-            <div class="AddView">
-                <a href="#" class="AddProductsButton"><i   class="fa-solid fa-eye fa-lg"></i>
-                <h3>View Product</h3></a>
-            </div>
-            <div class="AddProductsClick">
-                <a href="#" class="AddProductsButton"><i   class="fa-solid fa-tag fa-lg"></i>
-                <h3>Add Product</h3></a>
-            </div>
-        </div>
-        <div class="AddProductEntry">
-            <div class="EntryProductName">
-                <h4>Product Name</h4>
-                <input class="TopText" type="text">
-            </div>
-            <div class="EntryCategories">
-                <h4>Categories</h4>
-                <input class="TopText" type="text">
-            </div>
-        </div>
+ <nav class="sidebar">
+  <img src="../assets/images/logo-navbar.png" alt="logo-navbar">
 
-        <div class="EntryDescription">
-            <h4>Description</h4>
-            <textarea class="DescriptionText" name="" id="" cols="125" rows="7"></textarea>
-        </div>
+  <div class="userinfo">
+   <div class="userinfo__left">
+    <div class="circle"></div>
+    <!-- <img src="../assets/images/user-image-navbar.png" alt="user-image-navbar" class="orayt"> -->
+   </div>
 
-        <div class="EntryAttributes">
-            <h4>Attributes</h4>
-            <textarea class="AttributesText" name="" id="" cols="125" rows="9"></textarea>
-        </div>
+   <div class="userinfo__right">
+    <p>Jane Doe</p>
+    <p>ID: 1</p>
+   </div>
+  </div>
 
-        <div class="AddProductEntries">
-            <div class="EntryAmount">
-                <h4>Amount</h4>
-                <input class="BottomText" type="number">
-            </div>
-            <div class="EntryLocation">
-                <h4>Location</h4>
-                <input class="BottomText" type="text">
-            </div>
-        </div>
+  <ul class="sidebar__links">
+   <li><a href="../html/dashboard.html" class="button"><i class="fa-solid fa-dashboard fa-xl"></i> Dashboard</a></li>
+   <li><a href="../html/products.html" class="button"><i class="fa-solid fa-tags fa-xl"></i> Products</a></li>
+   <li><a href="../html/user.html" class="button"><i class="fa-solid fa-user fa-xl"></i> User</a></li>
+  </ul>
 
-        <div class="confirmation-buttons">
-            <a href="" class="cancel">Cancel</a>
-            <a href="" class="confirm">Confirm</a>
-        </div>
+  <div class="sidebar__footer">
+   <h4 class="companyname">Krentzackary Motor©</h4>
+   <h4 class="year">2023</h4>
+  </div>
+ </nav>
 
-        <section class="EditProductSection">
-            <div class="EditProductsText">
-                <div class="EditView">
-                    <a href="#" class="EditProductsButton"><i   class="fa-solid fa-eye fa-lg"></i>
-                    <h3>View Product</h3></a>
-                </div>
-                <div class="EditProductsClick">
-                    <a href="#" class="EditProductsButton"><i   class="fa-solid fa-tag fa-lg"></i>
-                    <h3>Add Product</h3></a>
-                </div>
-            </div>
-            <div class="EditProductEntry">
-                <div class="EntryProductName">
-                    <h4>Product Name</h4>
-                    <input class="TopText" type="text">
-                </div>
-                <div class="EntryCategories">
-                    <h4>Categories</h4>
-                    <input class="EditTopText" type="text">
-                </div>
-            </div>
-    
-            <div class="EditEntryDescription">
-                <h4>Description</h4>
-                <textarea class="EditDescriptionText" name="" id="" cols="125" rows="7"></textarea>
-            </div>
-    
-            <div class="EditEntryAttributes">
-                <h4>Attributes</h4>
-                <textarea class="EditAttributesText" name="" id="" cols="125" rows="9"></textarea>
-            </div>
-    
-            <div class="EditProductEntries">
-                <div class="EditEntryAmount">
-                    <h4>Amount</h4>
-                    <input class="EditBottomText" type="number">
-                </div>
-                <div class="EditEntryLocation">
-                    <h4>Location</h4>
-                    <input class="EditBottomText" type="text">
-                </div>
-            </div>
-    
-            <div class="confirmation-buttons">
-                <a href="" class="cancel">Cancel</a>
-                <a href="" class="confirm">Confirm</a>
-            </div>
+ <section class="productSection">
+  <div class="productsText">
+   <div class="View">
+    <a href="#" class="ProductsButton"><i   class="fa-solid fa-eye fa-lg"></i>
+    <h3>View Product</h3></a>
+   </div>
+
+   <div class="Add">
+    <a href="#" class="ProductsButton"><i   class="fa-solid fa-tag fa-lg"></i>
+    <h3>Add Product</h3></a>
+   </div>
+  </div>
+
+  <table class="typebox">
+   <tr class="Type">
+    <th class="th-id IdBorder">ID #</th>
+    <th class="th-product">Product Name</th>
+    <th class="th-desc">Description</th>
+    <th class="th-ctg">Categories</th>
+    <th class="th-attr">Attributes</th>
+    <th class="th-amnt">Amount</th>
+    <th class="th-loc">Location</th>
+    <th class="th-act ActionBorder">Action</th> 
+   </tr>
+  </table>
+
+  <div class="table-box">
+   <table class="ViewProductsTable">
+    <tr class="Entry">
+     <td>1</td>
+     <td>Seat Cover</td>
+     <td>Retero Style Seat Cover</td>
+     <td>Seat Cover</td>
+     <td>Material: PU Leather</td>
+     <td>23</td>
+     <td>Lalig Branch</td>
+     <td><button class="table-box-buttons products-edit-button"><img src="../assets/icons/edit.png"> Edit</button> or <button class="table-box-buttons products-delete-button"><img src="../assets/icons/delete.png"> Delete</button></td>
+    </tr>
+
+    <tr class="Entry">
+     <td>1</td>
+     <td>Seat Cover</td>
+     <td>Retero Style Seat Cover</td>
+     <td>Seat Cover</td>
+     <td>Material: PU Leather</td>
+     <td>23</td>
+     <td>Lalig Branch</td>
+     <td>Edit or Delete</td>
+    </tr>
+
+    <tr class="Entry">
+     <td>1</td>
+     <td>Seat Cover</td>
+     <td>Retero Style Seat Cover</td>
+     <td>Seat Cover</td>
+     <td>Material: PU Leather</td>
+     <td>23</td>
+     <td>Lalig Branch</td>
+     <td>Edit or Delete</td>
+    </tr>
+
+    <tr class="Entry">
+     <td>1</td>
+     <td>Seat Cover</td>
+     <td>Retero Style Seat Cover</td>
+     <td>Seat Cover</td>
+     <td>Material: PU Leather</td>
+     <td>23</td>
+     <td>Lalig Branch</td>
+     <td>Edit or Delete</td>
+    </tr>
+
+    <tr class="Entry">
+     <td>1</td>
+     <td>Seat Cover</td>
+     <td>Retero Style Seat Cover</td>
+     <td>Seat Cover</td>
+     <td>Material: PU Leather</td>
+     <td>23</td>
+     <td>Lalig Branch</td>
+     <td>Edit or Delete</td>
+    </tr>
+
+    <tr class="Entry">
+     <td>1</td>
+     <td>Seat Cover</td>
+     <td>Retero Style Seat Cover</td>
+     <td>Seat Cover</td>
+     <td>Material: PU Leather</td>
+     <td>23</td>
+     <td>Lalig Branch</td>
+     <td>Edit or Delete</td>
+    </tr>
+   </table>
+  </div>
+ </section>
+
+ <section class="AddProductSection">
+  <div class="AddProductsText">
+   <div class="AddView">
+    <a href="#" class="AddProductsButton"><i   class="fa-solid fa-eye fa-lg"></i>
+    <h3>View Product</h3></a>
+   </div>
+
+   <div class="AddProductsClick">
+    <a href="#" class="AddProductsButton"><i   class="fa-solid fa-tag fa-lg"></i>
+    <h3>Add Product</h3></a>
+   </div>
+  </div>
+  
+  <div class="AddProductEntry">
+   <div class="EntryProductName">
+    <h4>Product Name</h4>
+    <input class="TopText" type="text">
+   </div>
+
+   <div class="EntryCategories">
+    <h4>Categories</h4>
+    <input class="TopText" type="text">
+   </div>
+  </div>
+
+  <div class="EntryDescription">
+   <h4>Description</h4>
+   <textarea class="DescriptionText" name="" id="" cols="125" rows="7"></textarea>
+  </div>
+
+  <div class="EntryAttributes">
+   <h4>Attributes</h4>
+   <textarea class="AttributesText" name="" id="" cols="125" rows="9"></textarea>
+  </div>
+
+  <div class="AddProductEntries">
+   <div class="EntryAmount">
+    <h4>Amount</h4>
+    <input class="BottomText" type="number">
+   </div>
+
+   <div class="EntryLocation">
+    <h4>Location</h4>
+    <input class="BottomText" type="text">
+   </div>
+  </div>
+
+  <div class="confirmation-buttons">
+   <a href="" class="cancel">Cancel</a>
+   <a href="" class="confirm">Confirm</a>
+  </div>
+ </section>
 </body>
-
 <script src="../js/nav-script.js"></script>
+<script src="../js/products-script.js"></script>
 </html>

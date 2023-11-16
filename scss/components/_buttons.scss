@@ -1,3 +1,13 @@
+.table-box-buttons {
+  border: none;
+  width: auto;
+
+  &:hover {
+    color: $accent;
+    background-color: $light;
+  }
+}
+
 button {
   background-color: $light;
   // border: none;

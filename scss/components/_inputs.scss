@@ -13,3 +13,10 @@ input {
   padding-left: 2rem;    
   border-radius: 0 3.3rem 3.3rem 3.3rem;
 }
+
+.textarea-popup {
+  resize: none;
+  white-space: nowrap;
+  border-radius: 0 3.3rem 3.3rem 3.3rem;
+  border: 0;
+}
