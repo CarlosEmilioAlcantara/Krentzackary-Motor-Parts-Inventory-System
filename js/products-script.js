@@ -1,3 +1,4 @@
+// Popups 
 const editButton = document.querySelector(".products-edit-button");
 const editPopup = document.querySelector(".popup-edit-product");
 const deleteButton = document.querySelector(".products-delete-button");
@@ -19,4 +20,20 @@ exit.addEventListener("click", () => {
     overlay.classList.toggle("open");
     editPopup.classList.toggle("open");
     deletePopup.classList.toggle("open");
+})
+
+// Sections
+const productSection = document.querySelector(".productSection");
+const productSectionButton = document.querySelector(".ProductsButton");
+const addSection = document.querySelector(".AddProductSection");
+const addSectionButton = document.querySelector(".AddProductsButton");
+
+productSectionButton.addEventListener("click", () => {
+    productSection.classList.toggle("open");
+    addSection.classList.toggle("close");
+})
+
+addSectionButton.addEventListener("click", () => {
+    addSection.classList.toggle("open");
+    productSection.classList.toggle("close");
 })

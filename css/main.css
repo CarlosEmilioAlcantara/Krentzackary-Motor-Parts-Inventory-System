@@ -602,6 +602,7 @@ input {
   height: 80rem;
   border-radius: 3rem;
   margin-top: 5rem;
+  display: none;
 }
 .productSection .productsText {
   display: flex;
@@ -703,6 +704,12 @@ input {
 .productSection .table-box .ViewProductsTable .Entry {
   border-radius: 3.3rem;
 }
+.productSection.open {
+  display: block;
+}
+.productSection.close {
+  display: none;
+}
 
 .AddProductSection {
   background-color: #32373a;
@@ -801,6 +808,12 @@ input {
   border-top-left-radius: 0rem;
   width: 100%;
   resize: none;
+}
+.AddProductSection.open {
+  display: block;
+}
+.AddProductSection.close {
+  display: none;
 }
 
 .EditProductSection {

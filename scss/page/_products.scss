@@ -6,7 +6,7 @@
   @include wh('', 80rem);
   border-radius: 3rem;
   margin-top: 5rem;
-  // display: none;
+  display: none;
   
   .productsText {
     @include flexItem(space-evenly, '');
@@ -143,6 +143,14 @@
       }
     }
   }
+
+  &.open {
+    display: block;
+  }
+
+  &.close {
+    display: none;
+  }
 }
 
 .AddProductSection {
@@ -152,6 +160,7 @@
   border-radius: 3rem;
   margin-top: 7rem;
   display: none;
+  // display: block;
 
   .AddProductsText {
       display: flex;
@@ -258,6 +267,14 @@
         width: 100%;
         resize: none;
     }
+  }
+
+  &.open {
+    display: block;
+  }
+
+  &.close {
+    display: none;
   }
 }
 
