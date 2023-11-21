@@ -159,7 +159,7 @@
   max-width: auto;
   border-radius: 3rem;
   margin-top: 7rem;
-  display: none;
+  // display: none;
   // display: block;
 
   .AddProductsText {
@@ -392,3 +392,14 @@
     }
   }
 }
+
+.content_box {
+  .content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
+

@@ -717,7 +717,6 @@ input {
   max-width: auto;
   border-radius: 3rem;
   margin-top: 7rem;
-  display: none;
 }
 .AddProductSection .AddProductsText {
   display: flex;
@@ -912,6 +911,13 @@ input {
   border-top-left-radius: 0rem;
   width: 100%;
   resize: none;
+}
+
+.content_box .content {
+  display: none;
+}
+.content_box .content.active {
+  display: block;
 }
 
 .user-info {
