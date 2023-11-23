@@ -74,47 +74,51 @@ prodBtn.addEventListener("mouseout", ()=>{
     setTimeout(prodBtnBack, 100);
 })
 
+// const test = document.querySelector(".test");
 const editBtns = document.querySelectorAll(".edit-btn");
 const editBtnIcon = document.querySelectorAll(".edit-icon");
-const dlBtn = document.querySelectorAll(".dl-btn");
+const dlBtns = document.querySelectorAll(".dl-btn");
 const dlBtnIcon = document.querySelectorAll(".dl-icon");
 
-function editBtnChange() {
-    editBtnIcon.src = "../assets/icons/edit-hover.svg";
-}
-
-function editBtnBack() {
-    editBtnIcon.src = "../assets/icons/edit.svg";
-}
-
-// editBtn.addEventListener("mouseover", ()=>{
-//     setTimeout(editBtnChange, 100);
+// test.addEventListener("mouseover", ()=>{
+//     // setTimeout(editBtnChange, 100);
+//     console.log(document.querySelectorAll(".edit-btn").length);
 // })
 
-editBtns.forEach((btn)=>{
+editBtns.forEach((btn, index)=>{
     btn.addEventListener("mouseover", ()=>{
+        function editBtnChange() {
+            document.querySelectorAll(".edit-icon")[index].src = "../assets/icons/edit-hover.svg";
+        }
+
         setTimeout(editBtnChange, 100);
+    })
+
+    btn.addEventListener("mouseout", ()=>{
+        function editBtnBack() {
+            document.querySelectorAll(".edit-icon")[index].src = "../assets/icons/edit.svg";
+        }
+
+        setTimeout(editBtnBack, 100);
     })
 })
 
-editBtn.addEventListener("mouseout", ()=>{
-    setTimeout(editBtnBack, 100);
-})
+dlBtns.forEach((btn, index)=>{
+    btn.addEventListener("mouseover", ()=>{
+        function dlBtnChange() {
+            document.querySelectorAll(".dl-icon")[index].src = "../assets/icons/delete-hover.svg";
+        }
 
-function dlBtnChange() {
-    dlBtnIcon.src = "../assets/icons/delete-hover.svg";
-}
+        setTimeout(dlBtnChange, 100);
+    })
 
-function dlBtnBack() {
-    dlBtnIcon.src = "../assets/icons/delete.svg";
-}
+    btn.addEventListener("mouseout", ()=>{
+        function dlBtnBack() {
+            document.querySelectorAll(".dl-icon")[index].src = "../assets/icons/delete.svg";
+        }
 
-dlBtn.addEventListener("mouseover", ()=>{
-    setTimeout(dlBtnChange, 100);
-})
-
-dlBtn.addEventListener("mouseout", ()=>{
-    setTimeout(dlBtnBack, 100);
+        setTimeout(dlBtnBack, 100);
+    })
 })
 
 const tabs = document.querySelectorAll(".tab_btn");
