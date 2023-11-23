@@ -108,3 +108,34 @@ a.confirm {
       border: none;
   }
 }
+
+.tab-btn {
+  background-color: $transparent-two;
+  border: none;
+  color: $light;
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.6rem;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $transparent-two;
+    color: $accent;
+    border: none;
+}
+}
+
+.action-btns {
+  @include flexCol(center, center);
+}
+.edit-btn,.dl-btn {
+  transition-duration: 0.4s;
+
+  &:hover {
+    color: $accent;
+  }
+}

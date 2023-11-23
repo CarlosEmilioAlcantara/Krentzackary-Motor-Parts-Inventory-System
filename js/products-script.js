@@ -54,6 +54,69 @@
 //     }
 // })
 
+// Hovering
+const prodBtn = document.querySelector(".add-prod-btn");
+const prodBtnIcon = document.querySelector(".prod-btn-icon");
+
+function prodBtnChange() {
+    prodBtnIcon.src = "../assets/icons/add-prod-hover.svg";
+}
+
+function prodBtnBack() {
+    prodBtnIcon.src = "../assets/icons/add-prod.svg";
+}
+
+prodBtn.addEventListener("mouseover", ()=>{
+    setTimeout(prodBtnChange, 100);
+})
+
+prodBtn.addEventListener("mouseout", ()=>{
+    setTimeout(prodBtnBack, 100);
+})
+
+const editBtns = document.querySelectorAll(".edit-btn");
+const editBtnIcon = document.querySelectorAll(".edit-icon");
+const dlBtn = document.querySelectorAll(".dl-btn");
+const dlBtnIcon = document.querySelectorAll(".dl-icon");
+
+function editBtnChange() {
+    editBtnIcon.src = "../assets/icons/edit-hover.svg";
+}
+
+function editBtnBack() {
+    editBtnIcon.src = "../assets/icons/edit.svg";
+}
+
+// editBtn.addEventListener("mouseover", ()=>{
+//     setTimeout(editBtnChange, 100);
+// })
+
+editBtns.forEach((btn)=>{
+    btn.addEventListener("mouseover", ()=>{
+        setTimeout(editBtnChange, 100);
+    })
+})
+
+editBtn.addEventListener("mouseout", ()=>{
+    setTimeout(editBtnBack, 100);
+})
+
+function dlBtnChange() {
+    dlBtnIcon.src = "../assets/icons/delete-hover.svg";
+}
+
+function dlBtnBack() {
+    dlBtnIcon.src = "../assets/icons/delete.svg";
+}
+
+dlBtn.addEventListener("mouseover", ()=>{
+    setTimeout(dlBtnChange, 100);
+})
+
+dlBtn.addEventListener("mouseout", ()=>{
+    setTimeout(dlBtnBack, 100);
+})
+
 const tabs = document.querySelectorAll(".tab_btn");
 const all_content = document.querySelectorAll(".content");
 
