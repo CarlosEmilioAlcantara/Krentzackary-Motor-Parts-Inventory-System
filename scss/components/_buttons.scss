@@ -126,16 +126,18 @@ a.confirm {
     background-color: $transparent-two;
     color: $accent;
     border: none;
-}
+  }
 }
 
 .action-btns {
   @include flexCol(center, center);
 }
-.edit-btn,.dl-btn {
+
+.edit-btn, .dl-btn {
   transition-duration: 0.4s;
 
   &:hover {
     color: $accent;
+    cursor: pointer;
   }
 }

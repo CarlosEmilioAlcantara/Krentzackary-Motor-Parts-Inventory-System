@@ -168,6 +168,7 @@ a.confirm:hover {
 }
 .edit-btn:hover, .dl-btn:hover {
   color: #ff8e00;
+  cursor: pointer;
 }
 
 input {
@@ -946,10 +947,6 @@ input {
   resize: none;
 }
 
-.content {
-  padding: 3rem;
-}
-
 .sections {
   width: 106.7rem;
   height: 81.4rem;
@@ -962,10 +959,12 @@ input {
   align-items: center;
   margin-top: 2rem;
 }
-.sections table {
-  table-layout: fixed;
-  border-spacing: 0rem;
-  padding: 0rem;
+.sections .content_box .content {
+  padding: 3rem;
+  display: none;
+}
+.sections .content_box .content.active {
+  display: block;
 }
 .sections .table-wrapper {
   border-top-left-radius: 3.3rem;
@@ -974,6 +973,15 @@ input {
   overflow-y: scroll;
   margin-top: 0rem;
   width: 100%;
+  display: none;
+}
+.sections .table-wrapper table {
+  table-layout: fixed;
+  border-spacing: 0rem;
+  padding: 0rem;
+}
+.sections .table-wrapper.active {
+  display: block;
 }
 .sections .products-table {
   background-color: #e5e7e6;
@@ -996,13 +1004,6 @@ input {
 }
 .sections .products-table .top-right {
   border-top-right-radius: 3.3rem;
-}
-
-.content_box .content {
-  display: none;
-}
-.content_box .content.active {
-  display: block;
 }
 
 .user-info {

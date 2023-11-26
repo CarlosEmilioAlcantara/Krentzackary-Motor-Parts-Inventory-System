@@ -393,10 +393,6 @@
   }
 }
 
-.content {
-  padding: 3rem;
-}
-
 .sections {
   width: 106.7rem;
   height: 81.4rem;
@@ -408,10 +404,15 @@
     margin-top: 2rem;
   }
 
-  table {
-    table-layout: fixed;
-    border-spacing: 0rem;
-    padding: 0rem;
+  .content_box {
+    .content {
+      padding: 3rem;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 
   .table-wrapper {
@@ -422,6 +423,17 @@
     margin-top: 0rem;
     // margin-right: 2rem;
     width: 100%;
+    display: none;
+
+    table {
+      table-layout: fixed;
+      border-spacing: 0rem;
+      padding: 0rem;
+    }
+
+    &.active {
+      display: block;
+    }
   }
 
   .products-table {
@@ -451,14 +463,3 @@
     }
   }
 }
-
-.content_box {
-  .content {
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
-}
-

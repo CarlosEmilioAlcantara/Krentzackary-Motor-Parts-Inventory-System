@@ -121,8 +121,9 @@ dlBtns.forEach((btn, index)=>{
     })
 })
 
-const tabs = document.querySelectorAll(".tab_btn");
+const tabs = document.querySelectorAll(".tab-btn");
 const all_content = document.querySelectorAll(".content");
+const table_wrapper = document.querySelector(".table-wrapper");
 
 tabs.forEach((tab, index)=>{
     tab.addEventListener("click", ()=>{
@@ -131,5 +132,11 @@ tabs.forEach((tab, index)=>{
 
         all_content.forEach(content=>{content.classList.remove("active")});
         all_content[index].classList.add("active");
+
+        if (table_wrapper.classList.contains("active")) {
+            table_wrapper.classList.remove("active");
+        } else {
+            table_wrapper.classList.add("active");
+        }
     })
 })
