@@ -151,19 +151,19 @@ const products_form = document.querySelector(".products-form");
 // })
 
 viewProdBtn.addEventListener("click", ()=>{
-    if (table_wrapper.classList.contains("active")) {
-        table_wrapper.classList.remove("active");
-    } else {
+    if (!products_form.classList.contains("inactive") && !table_wrapper.classList.contains("active")) {
         products_form.classList.remove("active");
+        products_form.classList.add("inactive");
+        table_wrapper.classList.remove("inactive");
         table_wrapper.classList.add("active");
     }
 })
 
 addProdBtn.addEventListener("click", ()=>{
-    if (products_form.classList.contains("active")) {
-        products_form.classList.remove("active");
-    } else {
-        table_wrapper.classList.remove("active");
+    if (!table_wrapper.classList.contains("inactive") && !products_form.classList.contains("active")) {
+        table_wrapper.classList.remove("active")
+        table_wrapper.classList.add("inactive");
+        products_form.classList.remove("inactive");
         products_form.classList.add("active");
     }
 })

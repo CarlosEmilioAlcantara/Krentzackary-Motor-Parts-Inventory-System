@@ -470,7 +470,6 @@
 .products-form {
   @include flexCol(center, center);
   gap: 3rem;
-  display: none;
 
   .form-group {
     @include flexItem('', '');
@@ -498,5 +497,9 @@
 
   &.active {
     display: block;
+  }
+
+  &.inactive {
+    display: none;
   }
 }

@@ -1014,7 +1014,6 @@ input {
   justify-content: center;
   align-items: center;
   gap: 3rem;
-  display: none;
 }
 .products-form .form-group {
   display: flex;
@@ -1046,6 +1045,9 @@ input {
 }
 .products-form.active {
   display: block;
+}
+.products-form.inactive {
+  display: none;
 }
 
 .user-info {
