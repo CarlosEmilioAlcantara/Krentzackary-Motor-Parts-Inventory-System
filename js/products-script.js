@@ -122,21 +122,48 @@ dlBtns.forEach((btn, index)=>{
 })
 
 const tabs = document.querySelectorAll(".tab-btn");
+const viewProdBtn = document.querySelector(".prod-btn");
+const addProdBtn = document.querySelector(".add-prod-btn");
 const all_content = document.querySelectorAll(".content");
 const table_wrapper = document.querySelector(".table-wrapper");
+const products_form = document.querySelector(".products-form");
 
-tabs.forEach((tab, index)=>{
-    tab.addEventListener("click", ()=>{
-        tabs.forEach(tab=>{tab.classList.remove("active")});
-        tab.classList.add("active");
+// tabs.forEach((tab, index)=>{
+//     tab.addEventListener("click", ()=>{
+//         tabs.forEach(tab=>{tab.classList.remove("active")});
+//         tab.classList.add("active");
 
-        all_content.forEach(content=>{content.classList.remove("active")});
-        all_content[index].classList.add("active");
+//         all_content.forEach(content=>{content.classList.remove("active")});
+//         all_content[index].classList.add("active");
 
-        if (table_wrapper.classList.contains("active")) {
-            table_wrapper.classList.remove("active");
-        } else {
-            table_wrapper.classList.add("active");
-        }
-    })
+//         if (table_wrapper.classList.contains("active")) {
+//             table_wrapper.classList.remove("active");
+//         } else {
+//             table_wrapper.classList.add("active");
+//         }
+
+//         if (products_form.classList.contains("active")) {
+//             products_form.classList.remove("active");
+//         } else {
+//             products_form.classList.add("active");
+//         }
+//     })
+// })
+
+viewProdBtn.addEventListener("click", ()=>{
+    if (table_wrapper.classList.contains("active")) {
+        table_wrapper.classList.remove("active");
+    } else {
+        products_form.classList.remove("active");
+        table_wrapper.classList.add("active");
+    }
+})
+
+addProdBtn.addEventListener("click", ()=>{
+    if (products_form.classList.contains("active")) {
+        products_form.classList.remove("active");
+    } else {
+        table_wrapper.classList.remove("active");
+        products_form.classList.add("active");
+    }
 })

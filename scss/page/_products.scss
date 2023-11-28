@@ -406,7 +406,7 @@
 
   .content_box {
     .content {
-      padding: 3rem;
+      // padding: 3rem;
       display: none;
 
       &.active {
@@ -420,10 +420,9 @@
     border-bottom-left-radius: 3.3rem;
     max-height: 66rem;
     overflow-y: scroll;
-    margin-top: 0rem;
-    // margin-right: 2rem;
-    width: 100%;
-    display: none;
+    margin: 3rem;
+    margin-right: 5000rem;
+    width: 94%;
 
     table {
       table-layout: fixed;
@@ -433,6 +432,10 @@
 
     &.active {
       display: block;
+    }
+
+    &.inactive {
+      display: none;
     }
   }
 
@@ -461,5 +464,39 @@
     .top-right {
       border-top-right-radius: 3.3rem;
     }
+  }
+}
+
+.products-form {
+  @include flexCol(center, center);
+  gap: 3rem;
+  display: none;
+
+  .form-group {
+    @include flexItem('', '');
+    gap: 12rem;
+  }
+
+  .form-body {
+    @include flexCol();
+  }
+
+  .form-title {
+    @include flexItem(center, center);
+    background-color: $accent;
+    color: $darker;
+    @include wh(17.8rem, 4rem);
+    border-top-left-radius: 3.3rem;
+    border-top-right-radius: 3.3rem;
+  }
+
+  .form-input {
+    padding: 1.3rem 16.6rem;
+    padding-left: 2rem;    
+    border-radius: 0 3.3rem 3.3rem 3.3rem;
+  }
+
+  &.active {
+    display: block;
   }
 }
