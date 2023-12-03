@@ -1,4 +1,5 @@
 .overlay {
+      // Switch these when working with php
   display: none;
   // display: block;
   position: fixed;
@@ -13,7 +14,8 @@
   z-index: 1;
 
   &.open {
-      // display: none;
-      display: block;
+    // Switch these when working with php
+    display: none;
+    // display: block;
   }
 }

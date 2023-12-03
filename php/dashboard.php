@@ -53,8 +53,8 @@
         </div>
 
         <ul class="sidebar__links">
-            <li><a href="../html/dashboard.html" class="button selected"><i class="fa-solid fa-dashboard fa-xl"></i> Dashboard</a></li>
-            <li><a href="../html/products.html" class="button"><i class="fa-solid fa-tags fa-xl"></i> Products</a></li>
+            <li><a href="../php/dashboard.php" class="button selected"><i class="fa-solid fa-dashboard fa-xl"></i> Dashboard</a></li>
+            <li><a href="../php/products.php" class="button"><i class="fa-solid fa-tags fa-xl"></i> Products</a></li>
             <li><a href="../html/user.html" class="button"><i class="fa-solid fa-user fa-xl"></i> User</a></li>
         </ul>
 

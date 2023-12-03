@@ -54,7 +54,7 @@
         if(!empty($error_message)) { ?>
             <div class="overlay"></div>
              <div class="popup">
-              <div class="popup__header-error">
+              <div class="popup__header error">
                <div class="popup__container">
                 <div class="popup__wrapper">
                  <h4><?= $error_message ?></h4>

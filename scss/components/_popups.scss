@@ -29,7 +29,6 @@
 
 .popup-edit-product {
   // display: none;
-  display: block;
   z-index: 2;
   position: fixed;
   // Use just the number without a percentage else bg-color disappears
@@ -145,8 +144,9 @@
 }
 
 .popup {
-  // display: none;
-  display: block;
+  // Switch these when working with php
+  display: none;
+  // display: block;
   z-index: 2;
   position: fixed;
   // Use just the number without a percentage else bg-color disappears
@@ -170,20 +170,24 @@
     @include flexItem(space-between, center)
   }
 
-  &__header-error {
+  &__header {
     color: $light;
-    background-color: $red;
     height: 4rem;
     border-top-left-radius: 3.3rem;
     border-top-right-radius: 3.3rem;
-  }
 
-  &__header-normal {
-    color: $darker;
-    background-color: $accent;
-    height: 4rem;
-    border-top-left-radius: 3.3rem;
-    border-top-right-radius: 3.3rem;
+    &.success {
+      background-color: $green;
+    }
+
+    &.error {
+      background-color: $red;
+    }
+
+    &.normal {
+      color: $darker;
+      background-color: $accent;
+    }
   }
 
   &__header-exit {
@@ -237,7 +241,9 @@
   }
 
   &.open {
+    // Switch these when working with php
     display: none;
+    // display: block;
   }
 }
 

@@ -204,7 +204,7 @@ input {
   z-index: 1;
 }
 .overlay.open {
-  display: block;
+  display: none;
 }
 
 .popup-edit-header {
@@ -233,7 +233,6 @@ input {
 }
 
 .popup-edit-product {
-  display: block;
   z-index: 2;
   position: fixed;
   width: 90rem;
@@ -324,7 +323,7 @@ input {
 }
 
 .popup {
-  display: block;
+  display: none;
   z-index: 2;
   position: fixed;
   width: 50.5rem;
@@ -343,19 +342,21 @@ input {
   justify-content: space-between;
   align-items: center;
 }
-.popup__header-error {
+.popup__header {
   color: #e5e7e6;
-  background-color: #c21a24;
   height: 4rem;
   border-top-left-radius: 3.3rem;
   border-top-right-radius: 3.3rem;
 }
-.popup__header-normal {
+.popup__header.success {
+  background-color: #077b43;
+}
+.popup__header.error {
+  background-color: #c21a24;
+}
+.popup__header.normal {
   color: #32373a;
   background-color: #ff8e00;
-  height: 4rem;
-  border-top-left-radius: 3.3rem;
-  border-top-right-radius: 3.3rem;
 }
 .popup__header-exit {
   padding-bottom: 0.8rem;
@@ -628,325 +629,6 @@ input {
   margin-bottom: 2rem;
 }
 
-.productSection {
-  background-color: #32373a;
-  padding: 0rem 3rem 3rem 3rem;
-  max-width: 1000rem;
-  width: "";
-  height: 80rem;
-  border-radius: 3rem;
-  margin-top: 5rem;
-  display: none;
-}
-.productSection .productsText {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: "";
-  padding: 3rem 0rem 3rem 0rem;
-}
-.productSection .productsText .View {
-  color: #e5e7e6;
-}
-.productSection .productsText .View .ProductsButton {
-  display: flex;
-  justify-content: "";
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: #e5e7e6;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.productSection .productsText .View .ProductsButton:hover {
-  color: #ff8e00;
-}
-.productSection .productsText .Add {
-  color: #e5e7e6;
-}
-.productSection .productsText .Add .ProductsButton {
-  display: flex;
-  justify-content: "";
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: #e5e7e6;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.productSection .productsText .Add .ProductsButton:hover {
-  color: #ff8e00;
-}
-.productSection .Type {
-  position: sticky;
-  margin-top: -0.5rem;
-  border-collapse: collapse;
-}
-.productSection .Type th {
-  background-color: #ff8e00;
-  border-left: 0.1rem solid #32373a;
-}
-.productSection .Type .th-id {
-  width: 7.4rem;
-}
-.productSection .Type .th-product {
-  width: 14.1rem;
-}
-.productSection .Type .th-desc {
-  width: 23.4rem;
-}
-.productSection .Type .th-ctg {
-  width: 14.1rem;
-}
-.productSection .Type .th-attr {
-  width: 21rem;
-}
-.productSection .Type .th-amnt {
-  width: 8.2rem;
-}
-.productSection .Type .th-loc {
-  width: 15.3rem;
-}
-.productSection .Type .th-act {
-  width: 16.1rem;
-}
-.productSection .Type .IdBorder {
-  background-color: #ff8e00;
-  border-top-left-radius: 3.3rem;
-}
-.productSection .Type .ActionBorder {
-  background-color: #ff8e00;
-  border-top-right-radius: 3.3rem;
-}
-.productSection .table-box {
-  height: 60rem;
-  position: sticky;
-  overflow: auto;
-}
-.productSection .table-box .ViewProductsTable {
-  display: block;
-  background-color: #e5e7e6;
-  text-align: center;
-  border-collapse: collapse;
-  border: 0.3rem solid #32373a;
-  white-space: nowrap;
-}
-.productSection .table-box .ViewProductsTable td {
-  padding: 5rem 3rem;
-  border-collapse: collapse;
-  border: 0.3rem solid #32373a;
-}
-.productSection .table-box .ViewProductsTable .Entry {
-  border-radius: 3.3rem;
-}
-.productSection.open {
-  display: block;
-}
-.productSection.close {
-  display: none;
-}
-
-.AddProductSection {
-  background-color: #32373a;
-  padding: 0rem 3rem 3rem 3rem;
-  max-width: auto;
-  border-radius: 3rem;
-  margin-top: 7rem;
-}
-.AddProductSection .AddProductsText {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 3rem 0rem 3rem 0rem;
-}
-.AddProductSection .AddProductsText .AddView {
-  color: #e5e7e6;
-}
-.AddProductSection .AddProductsText .AddView .AddProductsButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: #e5e7e6;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.AddProductSection .AddProductsText .AddView .AddProductsButton:hover {
-  color: #ff8e00;
-}
-.AddProductSection .AddProductsText .AddProductsClick {
-  color: #e5e7e6;
-}
-.AddProductSection .AddProductsText .AddProductsClick .AddProductsButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: #e5e7e6;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.AddProductSection .AddProductsText .AddProductsClick .AddProductsButton:hover {
-  color: #ff8e00;
-}
-.AddProductSection h4 {
-  background-color: #ff8e00;
-  display: flex;
-  justify-content: center;
-  border-top-right-radius: 3rem;
-  border-top-left-radius: 3rem;
-  max-width: 20rem;
-  padding: 0.7rem 0rem;
-}
-.AddProductSection .AddProductEntry {
-  display: flex;
-  gap: 5rem;
-  margin-bottom: 3rem;
-}
-.AddProductSection .AddProductEntry .TopText {
-  box-sizing: border-box;
-  padding: 1.5rem 25rem;
-  padding-left: 1.5rem;
-  border-top-left-radius: 0rem;
-  width: 100%;
-  resize: none;
-}
-.AddProductSection .EntryDescription {
-  margin-bottom: 3rem;
-}
-.AddProductSection .EntryDescription .DescriptionText {
-  background-color: #e5e7e6;
-  padding-left: 1.5rem;
-  padding-top: 0.5rem;
-  border-radius: 3.3rem;
-  border-top-left-radius: 0rem;
-}
-.AddProductSection .EntryAttributes {
-  margin-bottom: 3rem;
-}
-.AddProductSection .EntryAttributes .AttributesText {
-  background-color: #e5e7e6;
-  padding-left: 1.5rem;
-  padding-top: 0.5rem;
-  border-radius: 3.3rem;
-  border-top-left-radius: 0rem;
-}
-.AddProductSection .AddProductEntries {
-  display: flex;
-  gap: 5rem;
-  margin-bottom: 3rem;
-}
-.AddProductSection .AddProductEntries .BottomText {
-  box-sizing: border-box;
-  padding: 1.5rem 25rem;
-  padding-left: 1.5rem;
-  border-top-left-radius: 0rem;
-  width: 100%;
-  resize: none;
-}
-.AddProductSection.open {
-  display: block;
-}
-.AddProductSection.close {
-  display: none;
-}
-
-.EditProductSection {
-  background-color: #32373a;
-  padding: 0rem 3rem 3rem 3rem;
-  max-width: auto;
-  border-radius: 3rem;
-  margin-top: 7rem;
-}
-.EditProductSection .EditProductsText {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 3rem 0rem 3rem 0rem;
-}
-.EditProductSection .EditProductsText .EditView {
-  color: #e5e7e6;
-}
-.EditProductSection .EditProductsText .EditView .EditProductsButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: #e5e7e6;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.EditProductSection .EditProductsText .EditView .EditProductsButton:hover {
-  color: #ff8e00;
-}
-.EditProductSection .EditProductsText .EditProductsClick {
-  color: #e5e7e6;
-}
-.EditProductSection .EditProductsText .EditProductsClick .EditProductsButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-decoration: none;
-  color: #e5e7e6;
-  transition-duration: 0.4s;
-  cursor: pointer;
-}
-.EditProductSection .EditProductsText .EditProductsClick .EditProductsButton:hover {
-  color: #ff8e00;
-}
-.EditProductSection h4 {
-  background-color: #ff8e00;
-  display: flex;
-  justify-content: center;
-  border-top-right-radius: 3rem;
-  border-top-left-radius: 3rem;
-  max-width: 20rem;
-  padding: 0.7rem 0rem;
-}
-.EditProductSection .EditProductEntry {
-  display: flex;
-  gap: 5rem;
-  margin-bottom: 3rem;
-}
-.EditProductSection .EditProductEntry .EditTopText {
-  box-sizing: border-box;
-  padding: 1.5rem 25rem;
-  padding-left: 1.5rem;
-  border-top-left-radius: 0rem;
-  width: 100%;
-  resize: none;
-}
-.EditProductSection .EditEntryDescription {
-  margin-bottom: 3rem;
-}
-.EditProductSection .EditEntryDescription .EditDescriptionText {
-  background-color: #e5e7e6;
-  padding-left: 1.5rem;
-  padding-top: 0.5rem;
-  border-radius: 3.3rem;
-  border-top-left-radius: 0rem;
-}
-.EditProductSection .EditEntryAttributes {
-  margin-bottom: 3rem;
-}
-.EditProductSection .EditEntryAttributes .EditAttributesText {
-  background-color: #e5e7e6;
-  padding-left: 1.5rem;
-  padding-top: 0.5rem;
-  border-radius: 3.3rem;
-  border-top-left-radius: 0rem;
-}
-.EditProductSection .EditProductEntries {
-  display: flex;
-  gap: 5rem;
-  margin-bottom: 3rem;
-}
-.EditProductSection .EditProductEntries .EditBottomText {
-  box-sizing: border-box;
-  padding: 1.5rem 25rem;
-  padding-left: 1.5rem;
-  border-top-left-radius: 0rem;
-  width: 100%;
-  resize: none;
-}
-
 .sections {
   width: 106.7rem;
   height: 81.4rem;
@@ -971,7 +653,6 @@ input {
   max-height: 66rem;
   overflow-y: scroll;
   margin: 3rem;
-  margin-right: 5000rem;
   width: 94%;
 }
 .sections .table-wrapper table {
@@ -1008,13 +689,6 @@ input {
   border-top-right-radius: 3.3rem;
 }
 
-.products-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-}
 .products-form .form-group {
   display: flex;
   justify-content: "";
@@ -1043,8 +717,18 @@ input {
   padding-left: 2rem;
   border-radius: 0 3.3rem 3.3rem 3.3rem;
 }
+.products-form .push-to-right {
+  position: fixed;
+  right: 20rem;
+  bottom: 11rem;
+}
 .products-form.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin: 3rem;
 }
 .products-form.inactive {
   display: none;
