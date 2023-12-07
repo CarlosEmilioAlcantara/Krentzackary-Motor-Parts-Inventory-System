@@ -28,7 +28,7 @@
 }
 
 .popup-edit-product {
-  // display: none;
+  display: none;
   z-index: 2;
   position: fixed;
   // Use just the number without a percentage else bg-color disappears
@@ -41,7 +41,6 @@
   background-color: $darker;
   border-radius: 3.3rem;
   transition: 0.5s;
-  display: none;
 
   &__container {
     padding-top: .8rem;
@@ -147,13 +146,13 @@
   // Switch these when working with php
   display: none;
   // display: block;
-  z-index: 2;
+  z-index: 2;     
   position: fixed;
   // Use just the number without a percentage else bg-color disappears
-  // left: 50;
-  // right: 50;
-  // top: 50;
-  // bottom: 50;
+  // left: 50rem;
+  // right: 50rem;
+  // top: 50rem;        
+  // bottom: 50rem;
   width: 50.5rem;
   height: 11rem;
   background-color: $darker;
@@ -242,8 +241,8 @@
 
   &.open {
     // Switch these when working with php
-    display: none;
-    // display: block;
+    // display: none;
+    display: block;     
   }
 }
 

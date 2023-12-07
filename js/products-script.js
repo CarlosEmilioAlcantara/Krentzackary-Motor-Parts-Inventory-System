@@ -50,6 +50,7 @@ const dlBtns = document.querySelectorAll(".dl-btn");
 const dlBtnIcon = document.querySelectorAll(".dl-icon");
 const editPopup = document.querySelector(".popup-edit-product");
 const dlPopup = document.querySelector(".popup-delete-product");
+const popups = document.querySelector(".popup");
 const overlay = document.querySelector(".overlay");
 const exitBtns = document.querySelectorAll(".popup__header-exit");
 
@@ -106,6 +107,27 @@ exitBtns.forEach((btn)=>{
             editPopup.classList.toggle("open");
         } else if (dlPopup.classList.contains("open")) {
             dlPopup.classList.toggle("open");
+        } else if (popups.classList.contains("open")) {
+            popups.classList.toggle("open");
         }
     })
 })
+
+function customAlert() {
+    addErrorPopup.classList.toggle("open");
+}
+
+function validateForm() {
+    prodName = document.forms["products-form-php"]["product_name"].value;
+    category = document.forms["products-form-php"]["category"].value;
+    description = document.forms["products-form-php"]["description"].value;
+    attributes = document.forms["products-form-php"]["attribute"].value;
+    amount = document.forms["products-form-php"]["amount"].value;
+    location = document.forms["products-form-php"]["location"].value;
+    addErrorPopup = document.getElementById("add-error");
+
+    if (prodName == "" || category == "" || description == "" || attributes == "" || amount == "" || location == "") {
+        alert();
+        return false;
+    }
+}

@@ -204,7 +204,7 @@ input {
   z-index: 1;
 }
 .overlay.open {
-  display: none;
+  display: block;
 }
 
 .popup-edit-header {
@@ -233,6 +233,7 @@ input {
 }
 
 .popup-edit-product {
+  display: none;
   z-index: 2;
   position: fixed;
   width: 90rem;
@@ -240,7 +241,6 @@ input {
   background-color: #32373a;
   border-radius: 3.3rem;
   transition: 0.5s;
-  display: none;
 }
 .popup-edit-product__container {
   padding-top: 0.8rem;
@@ -406,7 +406,7 @@ input {
   border-top-right-radius: 3.3rem;
 }
 .popup.open {
-  display: none;
+  display: block;
 }
 
 .edit-user-group {
@@ -732,6 +732,11 @@ input {
 }
 .products-form.inactive {
   display: none;
+}
+
+.responseMessage {
+  background-color: red;
+  color: magenta;
 }
 
 .user-info {

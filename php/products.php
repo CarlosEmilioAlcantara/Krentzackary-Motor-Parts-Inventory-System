@@ -6,6 +6,25 @@
     // Go to Login page. This stops access to the rest of the
     // site if the user is not logged in
     if (!isset($_SESSION['user'])) header('Location: login.php');
+
+    $_SESSION['table'] = 'product';
+
+    if ($_POST) {
+        include("../database/connection.php");
+
+        $product_name = $_POST["product_name"];
+        $category = $_POST['category'];
+        $description = $_POST['description'];
+        $attribute = $_POST['attribute'];
+        $amount = $_POST['amount'];
+        $location = $_POST['location'];
+
+        if (!isset($product_name) || trim($product_name) == '' || !isset($category) || !isset($description) || !isset($attribute) || !isset($amount) || !isset($location)) {
+            echo "Banna eggs with cheese";
+        } else header('Location: ../database/add-products.php?product_name='.$product_name.'&category='.$category.'&description='.$description.'&attribute='.$attribute.'&amount='.$amount.'&location='.$location);
+
+    }
+
     $user = ($_SESSION['user']);
 ?>
 <!DOCTYPE html>
@@ -20,12 +39,12 @@
  <title>Products - Krentzackary Motor Parts</title>
 </head>
 <body class="navbody">
- <div class="overlay"></div>
- <div class="popup">
-  <div class="popup__header success">
+ <!-- <div class="overlay"></div> -->
+ <!-- <div class="popup" id="add-error">
+  <div class="popup__header error>">
    <div class="popup__container">
     <div class="popup__wrapper">
-     <h4>Product Edited</h4>
+     <h4>Product Addition Error</h4>
 
      <div class="popup__header-exit">
       <span></span>
@@ -37,16 +56,22 @@
 
   <div class="popup__body">
    <div class="popup__container">
-    <p>Product edited successfully!</p>
+    <p>Product not added, have you filled all inputs?</p>
    </div>
   </div>
- </div>
+ </div> -->
 
- <div class="popup">
-  <div class="popup__header error">
+ <?php 
+     if(isset($_SESSION['response'])) { 
+         $response_message = $_SESSION['response']['message'];
+         $response_success = $_SESSION['response']['success'];
+ ?>
+ <div class="overlay <?= $response_success ? 'open' : ''?>"></div>
+ <div class="popup <?= $response_success ? 'open' : ''?>">
+  <div class="popup__header <?= $response_success ? 'success' : 'error'?>">
    <div class="popup__container">
     <div class="popup__wrapper">
-     <h4>Product Edit Error</h4>
+     <h4>Product Added Successfully</h4>
 
      <div class="popup__header-exit">
       <span></span>
@@ -58,11 +83,11 @@
 
   <div class="popup__body">
    <div class="popup__container">
-    <p>Product not edited, have you filled all inputs?</p>
+    <p><?= $response_message ?></p>
    </div>
   </div>
  </div>
-
+ <?php unset($_SESSION['response']); } ?>
  <div class="popup-edit-product">
   <div class="popup__header normal">
    <div class="popup__container">
@@ -145,7 +170,7 @@
   </div>
  </div>
 
- <div class="popup">
+ <!-- <div class="popup">
   <div class="popup__header success">
    <div class="popup__container">
     <div class="popup__wrapper">
@@ -164,7 +189,7 @@
     <p>Product deleted successfully!</p>
    </div>
   </div>
- </div>
+ </div>-->
 
  <div class="popup-delete-product">
   <div class="popup__header normal">
@@ -374,7 +399,7 @@
    </div>
 
    <div class="content">
-    <form action="../database/add-products.php" class="products-form-php">
+    <form action="products.php" method="POST" name="products-form-php">
      <div class="products-form inactive">
       <div class="form-group">
        <div class="form-body">
@@ -382,7 +407,7 @@
          <p>Product Name</p>
         </div>
 
-        <input type="text" class="form-input">
+        <input type="text" class="form-input" name="product_name">
        </div>
 
        <div class="form-body">
@@ -390,7 +415,7 @@
          <p>Categories</p>
         </div>
 
-        <input type="text" class="form-input">
+        <input type="text" class="form-input" name="category">
        </div>
       </div>
 
@@ -399,7 +424,7 @@
         <p>Description</p>
        </div>
 
-       <textarea class="textarea-popup" cols="116.5" rows="7"></textarea>
+       <textarea class="textarea-popup" cols="116.5" rows="7" name="description"></textarea>
       </div>
 
       <div class="form-body">
@@ -407,7 +432,7 @@
         <p>Attributes</p>
        </div>
 
-       <textarea class="textarea-popup" cols="116.5" rows="7"></textarea>
+       <textarea class="textarea-popup" cols="116.5" rows="7" name="attribute"></textarea>
       </div>
 
       <div class="form-group">
@@ -416,7 +441,7 @@
          <p>Amount</p>
         </div>
 
-        <input type="text" class="form-input">
+        <input type="text" class="form-input" name="amount">
        </div>
 
        <div class="form-body">
@@ -424,9 +449,12 @@
          <p>Location</p>
         </div>
 
-        <input type="text" class="form-input">
+        <input type="text" class="form-input" name="location">
        </div>
       </div>
+
+      <!-- <input type="hidden" name="table" value="product"> -->
+
       <div class="push-to-right">
        <div class="confirmation-buttons">
         <button>Cancel</button>
@@ -436,10 +464,11 @@
       </div>
      </div>
     </form>
+
    </div>
   </div>
  </div>
 </body>
 <script src="../js/nav-script.js"></script>
-<script src="../js/products-script.js?1500"></script>
+<script src="../js/products-script.js?1900"></script>
 </html>
