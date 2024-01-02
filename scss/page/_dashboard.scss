@@ -1,0 +1,28 @@
+.analytics-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5rem;
+    grid-gap: 5rem;
+}
+
+.stocked-items {
+    background-color: $darker;
+    border-radius: 3.3rem;
+    padding: 3rem;
+
+    .content {
+        @include flexCol(space-between, );
+        gap: 2rem;
+
+        h4 {
+            color: $accent;
+        }
+
+        p {
+            color: $accent;
+            span {
+                color: $light;
+            }
+        }
+    }
+}

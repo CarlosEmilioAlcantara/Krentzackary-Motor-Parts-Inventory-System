@@ -216,6 +216,31 @@
     }
   }
 
+  &__header-exit-spcl {
+    padding-bottom: .8rem;
+    cursor: pointer;
+
+    span {
+      display: block;
+      background-color: $light;
+      width: 2.5rem;
+      height: .4rem;
+      border-radius: 6.6rem;
+
+      &:nth-of-type(1) {
+        transform: rotate(45deg) translateY(.7rem) translateX(.2rem);
+      }
+
+      &:nth-of-type(2) {
+        transform: rotate(-45deg) translateY(-.1rem) translateX(-.4rem);
+      }
+    }
+
+    &.fix {
+      display: none;
+    }
+  }
+
   &__body {
     padding-top: 1.3rem;
     color: $light;
@@ -226,7 +251,7 @@
     }
 
     &__edit {
-      @include flexCol();
+      @include flexCol();          
 
       &__title {
         @include flexItem(center, center);

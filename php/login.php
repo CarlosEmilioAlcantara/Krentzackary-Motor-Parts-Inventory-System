@@ -52,8 +52,8 @@
 <body class="login-body">
     <?php
         if(!empty($error_message)) { ?>
-            <div class="overlay"></div>
-             <div class="popup">
+            <div class="overlay open"></div>
+             <div class="popup open">
               <div class="popup__header error">
                <div class="popup__container">
                 <div class="popup__wrapper">
@@ -85,10 +85,10 @@
      <div class="banner__login__user">
       <div>
        <i class="fa-solid fa-user fa-2xl"></i>
-       <h3>User Name</h3>
+       <h3>Email</h3>
       </div>
 
-      <input name="username" type="text">
+      <input name="username" type="text" placeholder="example@mail.com">
      </div>
 
      <div class="banner__login__password">

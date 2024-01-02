@@ -59,9 +59,54 @@ a.button {
 }
 
 .confirmation-buttons {
-  // display: flex;
-  // gap: 2rem;
+  @include flexItem(space-between, );
+  gap: 2rem;
   text-align: right;
+
+  &.fix {
+    display: none;
+  }
+
+  .cancel-button {
+    background-color: $transparent-two;
+    border: .2rem solid $red;
+    border-radius: 6.6rem;
+    color: $red;
+    width: 12rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 3.2;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  
+    &:hover {
+        background-color: $red;
+        color: $light;
+    }
+  }
+
+  .confirm-button {
+    background-color: $transparent-two;
+    border: .2rem solid $green;
+    border-radius: 6.6rem;
+    color: $green;
+    width: 12rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 3.2;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  
+    &:hover {
+        background-color: $green;
+        color: $light;
+        border: none;
+    }
+  }
 }
 
 .cancel {
@@ -124,10 +169,22 @@ a.confirm {
 
   &:hover {
     background-color: $transparent-two;
-    color: $accent;
+    color: $accent !important;
     border: none;
   }
+
+  &.active {
+    color: $accent;
+  }
+
+  &.inactive {
+    color: $light;
+  }
 }
+
+// .add-prod-btn {
+//   .
+// }
 
 .action-btns {
   @include flexCol(center, center);

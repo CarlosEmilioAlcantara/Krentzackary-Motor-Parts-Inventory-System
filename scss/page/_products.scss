@@ -1,8 +1,29 @@
 .sections {
-  width: 106.7rem;
-  height: 81.4rem;
+  width: 90%;   
+  // height: inherit;
+  margin-top: 5rem;
   background-color: $darker;
   border-radius: 3.3rem;
+
+  &.table-section {
+    width: 90%;
+  }
+
+  &.form-section {
+    width: 65%;
+  }
+
+  .product-count {
+    color: $accent;
+
+    &.active {
+      display: block;
+    }
+
+    &.inactive {
+      display: none;
+    }
+  }
 
   .tab-box {
     @include flexItem(space-evenly, center);
@@ -26,7 +47,7 @@
     max-height: 66rem;
     overflow-y: scroll;
     margin: 3rem;
-    width: 94%;
+    // width: 94%;
 
     table {
       table-layout: fixed;
@@ -48,6 +69,7 @@
     border-collapse: separate;
     border-spacing: 0rem;
     text-align: center;
+    word-wrap: break-word;
     width: 100%;
 
     th {
@@ -73,12 +95,21 @@
 
 .products-form {
   .form-group {
-    @include flexItem('', '');
+    @include flexItem(space-between, center);
     gap: 12rem;
+
+    &.bottom {
+      @include flexItem(space-between, end);
+      gap: 22rem;
+    }
   }
 
   .form-body {
     @include flexCol();
+
+    .spacer {
+      width: 35.5rem;
+    }
   }
 
   .form-title {

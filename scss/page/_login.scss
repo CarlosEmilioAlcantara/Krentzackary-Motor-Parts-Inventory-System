@@ -32,7 +32,12 @@
     }
 
     input {
-      padding: 1.5rem 7rem;
+      height: 5rem;
+      width: 30rem;
+      // padding: 1.7rem 3rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      text-align: left;
     }
 
     &__form {
