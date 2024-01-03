@@ -29,18 +29,26 @@
 
 .popup-edit-product {
   display: none;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
+  
   // Use just the number without a percentage else bg-color disappears
-  // left: 50;
-  // right: 50;
-  // top: 50;
-  // bottom: 50;
+  left: 50;
+  right: 50;
+  top: 7rem;
+  // bottom: 8rem;
   width: 90rem;
-  height: 80rem;
+  max-height: auto;
   background-color: $darker;
   border-radius: 3.3rem;
   transition: 0.5s;
+
+  &.user {
+    left: inherit;
+    right: inherit;
+    top: inherit;
+    bottom: inherit;
+  }
 
   &__container {
     padding-top: .8rem;
@@ -86,7 +94,7 @@
 
 .popup-delete-product {
   // display: none;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   // Use just the number without a percentage else bg-color disappears
   // left: 50;
@@ -146,7 +154,7 @@
   // Switch these when working with php
   display: none;
   // display: block;
-  z-index: 2;     
+  z-index: 3;     
   position: fixed;
   // Use just the number without a percentage else bg-color disappears
   // left: 50rem;
@@ -154,7 +162,7 @@
   // top: 50rem;        
   // bottom: 50rem;
   width: 50.5rem;
-  height: 11rem;
+  height: auto;
   background-color: $darker;
   border-radius: 3.3rem;
   transition: 0.5s;
@@ -177,7 +185,7 @@
 
     &.success {
       background-color: $green;
-    }
+    }     
 
     &.error {
       background-color: $red;
@@ -248,6 +256,15 @@
     &__group {
       @include flexItem('', '');
       gap: 12rem;
+
+      &.user {
+        @include flexItem('', center);
+        // justify-content: center;
+      }
+    }
+
+    &.user {
+      height: 26rem;
     }
 
     &__edit {

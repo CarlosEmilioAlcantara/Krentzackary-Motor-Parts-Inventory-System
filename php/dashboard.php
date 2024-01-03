@@ -149,7 +149,7 @@
   <ul class="sidebar__links">
    <li><a href="../php/dashboard.php" class="button selected"><i class="fa-solid fa-dashboard fa-xl"></i> Dashboard</a></li>
    <li><a href="../php/products.php" class="button"><i class="fa-solid fa-tags fa-xl"></i> Products</a></li>
-   <li><a href="../html/user.html" class="button"><i class="fa-solid fa-user fa-xl"></i> User</a></li>
+   <li><a href="../php/user.php" class="button"><i class="fa-solid fa-user fa-xl"></i> User</a></li>
   </ul>
 
   <footer class="sidebar__footer">
@@ -167,10 +167,10 @@
 
     <ul class="sellers">
      <li><span id="top"></span><?= $top_sale_name ?> - <?= $top_percentage ?>%</li>
-     <li><span id="second"></span><?= $second_sale_name ?> - <?= $second_percentage ?>%</li>
-     <li><span id="third"></span><?= $third_sale_name ?> - <?= $third_percentage ?>%</li>
-     <li><span id="fourth"></span><?= $fourth_sale_name ?> - <?= $fourth_percentage ?>%</li>
-     <li><span id="fifth"></span><?= $fifth_sale_name ?> - <?= $fifth_percentage ?>%</li>
+     <li><span id="second"></span><?= $second_sale_name ?> - <?= $second_percentage_list ?>%</li>
+     <li><span id="third"></span><?= $third_sale_name ?> - <?= $third_percentage_list ?>%</li>
+     <li><span id="fourth"></span><?= $fourth_sale_name ?> - <?= $fourth_percentage_list ?>%</li>
+     <li><span id="fifth"></span><?= $fifth_sale_name ?> - <?= $fifth_percentage_list ?>%</li>
     </ul>
    </div>
   </div>
@@ -183,10 +183,10 @@
 
     <ul class="sellers">
      <li><span id="top"></span><?= $least_sale_name ?> - <?= $least_percentage ?>%</li>
-     <li><span id="second"></span><?= $second_least_sale_name ?> - <?= $second_least_percentage ?>%</li>
-     <li><span id="third"></span><?= $third_least_sale_name ?> - <?= $third_least_percentage ?>%</li>
-     <li><span id="fourth"></span><?= $fourth_least_sale_name ?> - <?= $fourth_least_percentage ?>%</li>
-     <li><span id="fifth"></span><?= $fifth_least_sale_name ?> - <?= $fifth_least_percentage ?>%</li>
+     <li><span id="second"></span><?= $second_least_sale_name ?> - <?= $second_least_percentage_list ?>%</li>
+     <li><span id="third"></span><?= $third_least_sale_name ?> - <?= $third_least_percentage_list ?>%</li>
+     <li><span id="fourth"></span><?= $fourth_least_sale_name ?> - <?= $fourth_least_percentage_list ?>%</li>
+     <li><span id="fifth"></span><?= $fifth_least_sale_name ?> - <?= $fifth_least_percentage_list ?>%</li>
     </ul>
    </div>
   </div>

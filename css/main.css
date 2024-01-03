@@ -97,6 +97,9 @@ a.button.selected {
   gap: 2rem;
   text-align: right;
 }
+.confirmation-buttons.user {
+  margin-top: 2rem;
+}
 .confirmation-buttons.fix {
   display: none;
 }
@@ -133,6 +136,43 @@ a.button.selected {
   cursor: pointer;
 }
 .confirmation-buttons .confirm-button:hover {
+  background-color: #077b43;
+  color: #e5e7e6;
+  border: none;
+}
+.confirmation-buttons .edit-no {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.2rem solid #c21a24;
+  border-radius: 6.6rem;
+  color: #c21a24;
+  width: 12rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.confirmation-buttons .edit-no:hover {
+  background-color: #c21a24;
+  color: #e5e7e6;
+}
+.confirmation-buttons .edit-yes {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0.2rem solid #077b43;
+  border-radius: 6.6rem;
+  color: #077b43;
+  width: 12rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 3.2;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.confirmation-buttons .edit-yes:hover {
   background-color: #077b43;
   color: #e5e7e6;
   border: none;
@@ -253,7 +293,7 @@ input {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.3s;
-  z-index: 1;
+  z-index: 3;
 }
 .overlay.open {
   display: block;
@@ -273,7 +313,7 @@ input {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.3s;
-  z-index: 1;
+  z-index: 3;
 }
 .overlay-spcl.open {
   display: block;
@@ -306,13 +346,22 @@ input {
 
 .popup-edit-product {
   display: none;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
+  left: 50;
+  right: 50;
+  top: 7rem;
   width: 90rem;
-  height: 80rem;
+  max-height: auto;
   background-color: #32373a;
   border-radius: 3.3rem;
   transition: 0.5s;
+}
+.popup-edit-product.user {
+  left: inherit;
+  right: inherit;
+  top: inherit;
+  bottom: inherit;
 }
 .popup-edit-product__container {
   padding-top: 0.8rem;
@@ -350,7 +399,7 @@ input {
 }
 
 .popup-delete-product {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   width: 50.5rem;
   height: 20rem;
@@ -396,10 +445,10 @@ input {
 
 .popup {
   display: none;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   width: 50.5rem;
-  height: 11rem;
+  height: auto;
   background-color: #32373a;
   border-radius: 3.3rem;
   transition: 0.5s;
@@ -479,6 +528,14 @@ input {
   justify-content: "";
   align-items: "";
   gap: 12rem;
+}
+.popup__body__group.user {
+  display: flex;
+  justify-content: "";
+  align-items: center;
+}
+.popup__body.user {
+  height: 26rem;
 }
 .popup__body__edit {
   display: flex;

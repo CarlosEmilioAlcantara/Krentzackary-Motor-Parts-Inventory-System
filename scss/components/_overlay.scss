@@ -11,7 +11,7 @@
   bottom: 0;
   background-color: $transparent; 
   transition: 0.3s;
-  z-index: 1;
+  z-index: 3;
 
   &.open {
     // Switch these when working with php
@@ -37,7 +37,7 @@
   bottom: 0;
   background-color: $transparent; 
   transition: 0.3s;
-  z-index: 1;
+  z-index: 3;
 
   &.open {
     // Switch these when working with php

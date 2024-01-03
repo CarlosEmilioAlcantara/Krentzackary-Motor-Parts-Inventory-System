@@ -14,7 +14,7 @@
     // Default error to empty so we can customize it
     $error_message = '';
 
-    if (isset($_POST['add'])) {
+    if ($_POST) {
         include("../database/connection.php");
 
         $product_name = $_POST["product_name"];
@@ -25,12 +25,10 @@
         $amount_sold = $_POST['amount_sold'];
         $location = $_POST['location'];
 
-        if (!isset($product_name) || trim($product_name) == '' || !isset($category) || !isset($description) || !isset($attribute) || !isset($amount_held) || !isset($amount_sold) || !isset($location)) {
+        if ($product_name == '' || $category == '' || $description == '' || $attribute == '' || $amount_held == '' || $amount_sold == '' || $location == '') {
             $error_message = 'Kamotecue';
         } else header('Location: ../database/add-products.php?product_name='.$product_name.'&category='.$category.'&description='.$description.'&attribute='.$attribute.'&amount_held='.$amount_held.'&amount_sold='.$amount_sold.'&location='.$location);
-    } elseif (isset($_POST['clear'])) {
-      echo "Something";
-    }
+    } else ;
 
     $user = ($_SESSION['user']);
 ?>
@@ -184,13 +182,11 @@
  
       <input type="text" class="input__popup" id="prod-loc-ed">
      </div>
-    </div>
-
-    <div class="push-to-right">
-     <div class="confirmation-buttons">
-      <button class="edit-yes">Yes</button>
-      <button class="edit-no">No</button>
-     </div>
+      <div class="confirmation-buttons">
+       <button class="edit-yes">Yes</button>
+       
+       <button class="edit-no">No</button>
+      </div>
     </div>
    </div>
   </div>
@@ -380,7 +376,6 @@
 
         <input type="text" class="form-input" name="location" id="clearer">
        </div>
-
        
        <div class="form-body">
         <div class="confirmation-buttons">

@@ -63,6 +63,10 @@ a.button {
   gap: 2rem;
   text-align: right;
 
+  &.user {
+    margin-top: 2rem;
+  }
+
   &.fix {
     display: none;
   }
@@ -87,7 +91,50 @@ a.button {
     }
   }
 
+
+
   .confirm-button {
+    background-color: $transparent-two;
+    border: .2rem solid $green;
+    border-radius: 6.6rem;
+    color: $green;
+    width: 12rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 3.2;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  
+    &:hover {
+        background-color: $green;
+        color: $light;
+        border: none;
+    }
+  }
+
+  .edit-no {
+    background-color: $transparent-two;
+    border: .2rem solid $red;
+    border-radius: 6.6rem;
+    color: $red;
+    width: 12rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6rem;
+    line-height: 3.2;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  
+    &:hover {
+        background-color: $red;
+        color: $light;
+    }
+  }
+
+  .edit-yes {
     background-color: $transparent-two;
     border: .2rem solid $green;
     border-radius: 6.6rem;

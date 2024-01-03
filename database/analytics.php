@@ -114,15 +114,19 @@
 
     extract($combined_top_sales);
 
-    // Getting percentages of top sellers
+    // Getting percentages of top sellers for piechart
     $top_percentage = round($fifth / $sold * 100);
     $second_percentage = $top_percentage + round($fourth / $sold * 100);
     $third_percentage = $second_percentage + round($third / $sold * 100);
     $fourth_percentage = $third_percentage + round($second / $sold * 100);
     $fifth_percentage = $fourth_percentage + round($first / $sold * 100);
-    // foreach ($combined_top_sales as $item){
-    //     echo $item . "\n";
-    // }
+
+    // Getting percentages of top sellers for list
+    $top_percentage = round($fifth / $sold * 100);
+    $second_percentage_list = round($fourth / $sold * 100);
+    $third_percentage_list = round($third / $sold * 100);
+    $fourth_percentage_list = round($second / $sold * 100);
+    $fifth_percentage_list = round($first / $sold * 100);
     
     // Sort sales from lowest to highest
     sort($sales);
@@ -138,12 +142,19 @@
     // echo $fourth . "<br>";
     // echo $fifth . "<br>";
 
-    // Getting percentages of least sellers
+    // Getting percentages of least sellers for piechart
     $least_percentage = round($first / $sold * 100);
     $second_least_percentage = $least_percentage + round($second / $sold * 100);
     $third_least_percentage = $second_least_percentage + round($third / $sold * 100);
     $fourth_least_percentage = $third_least_percentage + round($fourth / $sold * 100);
     $fifth_least_percentage = $fourth_least_percentage + round($fifth / $sold * 100);
+
+    // Getting percentages of least sellers for list
+    $least_percentage = round($first / $sold * 100);
+    $second_least_percentage_list = round($second / $sold * 100);
+    $third_least_percentage_list = round($third / $sold * 100);
+    $fourth_least_percentage_list = round($fourth / $sold * 100);
+    $fifth_least_percentage_list = round($fifth / $sold * 100);
 
     // foreach ($descending_sales as $item){
     //     echo $item . "\n";
