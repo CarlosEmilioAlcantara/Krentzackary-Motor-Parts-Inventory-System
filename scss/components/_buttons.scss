@@ -59,7 +59,7 @@ a.button {
 }
 
 .confirmation-buttons {
-  @include flexItem(space-between, );
+  @include flexItem('', );
   gap: 2rem;
   text-align: right;
 

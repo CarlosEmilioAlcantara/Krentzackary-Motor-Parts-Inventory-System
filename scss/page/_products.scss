@@ -93,6 +93,21 @@
   }
 }
 
+.form-title {
+  @include flexItem(center, center);
+  background-color: $accent;
+  color: $darker;
+  @include wh(17.8rem, 4rem);
+  border-top-left-radius: 3.3rem;
+  border-top-right-radius: 3.3rem;
+}
+
+.form-input {
+  padding: 1.3rem 16.6rem;
+  padding-left: 2rem;    
+  border-radius: 0 3.3rem 3.3rem 3.3rem;
+}  
+
 .products-form {
   .form-group {
     @include flexItem(space-between, center);
@@ -112,20 +127,20 @@
     }
   }
 
-  .form-title {
-    @include flexItem(center, center);
-    background-color: $accent;
-    color: $darker;
-    @include wh(17.8rem, 4rem);
-    border-top-left-radius: 3.3rem;
-    border-top-right-radius: 3.3rem;
-  }
+  // .form-title {
+  //   @include flexItem(center, center);
+  //   background-color: $accent;
+  //   color: $darker;
+  //   @include wh(17.8rem, 4rem);
+  //   border-top-left-radius: 3.3rem;
+  //   border-top-right-radius: 3.3rem;
+  // }
 
-  .form-input {
-    padding: 1.3rem 16.6rem;
-    padding-left: 2rem;    
-    border-radius: 0 3.3rem 3.3rem 3.3rem;
-  }
+  // .form-input {
+  //   padding: 1.3rem 16.6rem;
+  //   padding-left: 2rem;    
+  //   border-radius: 0 3.3rem 3.3rem 3.3rem;
+  // }
 
   .push-to-right {
     position: fixed;

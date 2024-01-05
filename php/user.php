@@ -6,6 +6,12 @@
     // Go to Login page. This stops access to the rest of the
     // site if the user is not logged in
     if (!isset($_SESSION['user'])) header('Location: login.php');
+    include('../database/connection.php');
+
+    // if($_POST){
+    //     $itlog = $_POST['old-pass'];
+    //     echo $itlog;
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +25,8 @@
  <title>User - Krentzackary Motor Parts</title>
 </head>
 <body class="navbody">
- <div class="overlay open"></div>
- <div class="popup-edit-product open user">
+ <div class="overlay"></div>
+ <div class="popup-edit-product user">
   <div class="popup__header normal">
    <div class="popup__container">
     <div class="popup__wrapper">
@@ -42,7 +48,7 @@
        <p>First Name</p>
       </div>
  
-      <input type="text" class="input__popup">
+      <input type="text" class="input__popup" id="first-name">
      </div>
  
      <div class="popup__body__edit">
@@ -50,7 +56,7 @@
        <p>Last Name</p>
       </div>
  
-      <input type="text" class="input__popup">
+      <input type="text" class="input__popup" id="last-name">
      </div>
     </div>
 
@@ -60,16 +66,24 @@
        <p>Email Address</p>
       </div>
 
-      <input type="text" class="input__popup">
+      <input type="text" class="input__popup" id="email">
      </div>
-     <div class="push-to-right">
-      <div class="confirmation-buttons user">
-       <a href="" class="cancel">Cancel</a>
 
-       <a href="" class="confirm">Confirm</a>
+     <div class="popup__body__edit">
+      <div class="popup__body__edit__title">
+       <p>Last Name</p>
       </div>
+ 
+      <input type="text" class="input__popup" id="last-name">
      </div>
     </div>
+    <div class="push-to-right">
+      <div class="confirmation-buttons user">
+       <a href="" class="cancel" id="cancel-change">Cancel</a>
+
+       <a href="" class="confirm" id="confirm-change">Confirm</a>
+      </div>
+     </div>
    </div>
   </div>
  </div>
@@ -119,21 +133,76 @@
   </div>
  </nav>
 
- <div class="user-info">
-  <div class="circle"></div>
+ <!-- <form name="change-info-form" action="user.php" method="POST"> -->
+  <div class="change-info">
+   <h1>Change User Login Info</h1>
+   <p class="light-color">In here the master account's <br>login information can be altered.</p>
 
-  <div class="user-info__name">
-   <h3>Jane Doe</h3>
-   <p>Name</p>
+   <div class="form-body">
+    <div class="form-title">
+     <p>Current Password</p>
+    </div>
+
+    <input type="text" class="form-input" name="old-pass" id="old-pass">
+   </div>
+
+   <div class="form-body">
+    <div class="confirmation-buttons">
+     <button class="cancel-button">Cancel</button>
+
+     <button class="confirm-button">Confirm</button>
+    </div>
+   </div>
   </div>
+ <!-- </form> -->
 
-  <div class="user-info__number">
-   <h3>1</h3>
-   <p>Entity Number</p>
-  </div>
-
-  <button>Edit User</button>
- </div>
 </body>
 <script src="../js/nav-script.js"></script>
+<script src="../js/jquery/jquery-3.7.1.min.js"></script>
+
+<script>
+    function script(){
+        this.initialize = function(){
+            this.registerEvents();
+        }
+
+        this.registerEvents = function(){
+            const confirm = document.querySelector(".confirm-button");
+
+            confirm.addEventListener('click', ()=>{
+                oldPass = document.getElementById("old-pass").value;
+                // console.log(oldPass);
+
+                $.ajax({
+                    method: 'POST',
+                    data: { 
+                        old_pass: oldPass
+                    },
+                    url: '../database/check-pass.php',
+                    dataType: 'json',
+                    success: function(data){
+                        if(data.status){
+                            const overlay = document.querySelector(".overlay");
+                            const popup = document.querySelector(".popup-edit-product");
+
+                            overlay.classList.add("open");
+                            popup.classList.add("open");
+
+                            const confirmChange = document.getElementById("confirm-change");
+
+                            confirmChange.addEventListener('click', ()=>{
+                                console.log('It works');
+                            })
+                        } else {
+                            console.log('Floop');
+                        }
+                    }
+                })
+            })
+        }
+    }
+
+    var script = new script;
+    script.initialize();
+</script>
 </html>
