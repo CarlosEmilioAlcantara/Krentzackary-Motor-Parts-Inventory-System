@@ -39,7 +39,6 @@
   padding: 3rem;
   @include flexCol('', center);
   gap: 5rem;
-  text-align: center;
 
   h1 {
     color: $accent;
@@ -47,5 +46,16 @@
 
   p.light-color {
     color: $light;
+  }
+
+  &__grid {
+    display: grid;
+    column-gap: 8rem;
+    grid-template-columns: auto auto;
+  }
+
+  &__group {
+    @include flexCol('', ''); 
+    gap: 5rem;
   }
 }

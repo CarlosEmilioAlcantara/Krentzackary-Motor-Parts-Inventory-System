@@ -55,6 +55,7 @@ a.button {
 }
 
 .push-to-right {
+  @include flexItem(end, '');
   text-align: right;
 }
 
@@ -90,8 +91,6 @@ a.button {
         color: $light;
     }
   }
-
-
 
   .confirm-button {
     background-color: $transparent-two;

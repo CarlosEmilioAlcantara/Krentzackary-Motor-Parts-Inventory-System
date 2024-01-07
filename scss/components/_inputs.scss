@@ -6,13 +6,20 @@ input {
   // &__popup {
   //   padding: 4rem 36rem;
   // }
+
 }
 
 .input__popup {
   color: $darker;
-  padding: 1.3rem 16.6rem;
+  @include wh(30rem, 5rem);
   padding-left: 2rem;    
+  padding-right: 2rem;
   border-radius: 0 3.3rem 3.3rem 3.3rem;
+}
+
+.input__date {
+  text-align: center;
+  font-size: 2rem;
 }
 
 .textarea-popup {

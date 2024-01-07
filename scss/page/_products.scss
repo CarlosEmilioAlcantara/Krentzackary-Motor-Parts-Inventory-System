@@ -9,9 +9,9 @@
     width: 90%;
   }
 
-  &.form-section {
-    width: 65%;
-  }
+  // &.form-section {
+  //   width: 65%;
+  // }
 
   .product-count {
     color: $accent;
@@ -103,8 +103,9 @@
 }
 
 .form-input {
-  padding: 1.3rem 16.6rem;
+  @include wh(30rem, 5rem);
   padding-left: 2rem;    
+  padding-right: 2rem;  
   border-radius: 0 3.3rem 3.3rem 3.3rem;
 }  
 
@@ -115,7 +116,7 @@
 
     &.bottom {
       @include flexItem(space-between, end);
-      gap: 22rem;
+      gap: 16rem;
     }
   }
 
@@ -150,7 +151,7 @@
 
   &.active {
     @include flexCol(center, center);
-    gap: 5rem;
+    gap: 3rem;
     margin: 3rem;
   }
 

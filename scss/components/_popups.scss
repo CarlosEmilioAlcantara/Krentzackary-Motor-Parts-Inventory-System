@@ -39,6 +39,7 @@
   // bottom: 8rem;
   width: 90rem;
   max-height: auto;
+  padding-bottom: 2rem;
   background-color: $darker;
   border-radius: 3.3rem;
   transition: 0.5s;
@@ -163,6 +164,7 @@
   // bottom: 50rem;
   width: 50.5rem;
   height: auto;
+  padding-bottom: 2rem;
   background-color: $darker;
   border-radius: 3.3rem;
   transition: 0.5s;
@@ -174,7 +176,11 @@
   }
 
   &__wrapper {
-    @include flexItem(space-between, center)
+    @include flexItem(space-between, center);
+
+    &__user {
+      @include flexCol(center, center);
+    }
   }
 
   &__header {
@@ -255,16 +261,23 @@
 
     &__group {
       @include flexItem('', '');
-      gap: 12rem;
+      // @include flexItem(center, end);
+      gap: 22rem;
 
       &.user {
         @include flexItem('', center);
         // justify-content: center;
       }
+
+      &.edit {
+        @include flexItem(center, end);
+        gap: 27rem;
+      }
     }
 
     &.user {
-      height: 26rem;
+      height: auto;
+      padding-bottom: 2rem;
     }
 
     &__edit {
@@ -291,4 +304,8 @@
 .edit-user-group {
   @include flexCol('', '');
   gap: 5rem;
+}
+
+.textarea-popup {
+  padding: 1rem;
 }

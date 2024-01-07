@@ -74,6 +74,26 @@
           </div>
          </div>
   <?php } ?>
+  <div class="popup popup-edit-error">
+   <div class="popup__header error">
+    <div class="popup__container">
+     <div class="popup__wrapper">
+      <h4>Edit Error</h4>
+
+      <div class="popup__header-exit">
+       <span></span>
+       <span></span>
+      </div>
+     </div>
+    </div>
+   </div>
+
+   <div class="popup__body">
+    <div class="popup__container">
+     <p>Product not edited, have you filled all inputs?</p>
+    </div>
+   </div>
+  </div>
 
  <?php 
      if(isset($_SESSION['response'])) { 
@@ -136,24 +156,20 @@
      </div>
     </div>
 
-    <div class="popup__body__group">
-     <div class="popup__body__edit">
-      <div class="popup__body__edit__title">
-       <p>Description</p>
-      </div>
- 
-      <textarea class="textarea-popup" id="prod-desc-ed" cols="116.5" rows="7"></textarea>
+    <div class="popup__body__edit">
+     <div class="popup__body__edit__title">
+      <p>Description</p>
      </div>
+
+     <textarea class="textarea-popup" id="prod-desc-ed" cols="116.5" rows="7"></textarea>
     </div>
 
-    <div class="popup__body__group">
-     <div class="popup__body__edit">
-      <div class="popup__body__edit__title">
-       <p>Attributes</p>
-      </div>
- 
-      <textarea class="textarea-popup" id="prod-attr-ed" cols="116.5" rows="7"></textarea>
+    <div class="popup__body__edit">
+     <div class="popup__body__edit__title">
+      <p>Attributes</p>
      </div>
+
+     <textarea class="textarea-popup" id="prod-attr-ed" cols="116.5" rows="7"></textarea>
     </div>
 
     <div class="popup__body__group">
@@ -174,7 +190,7 @@
      </div>
     </div>
 
-    <div class="popup__body_group">
+    <div class="popup__body__group edit">
      <div class="popup__body__edit">
       <div class="popup__body__edit__title">
        <p>Location</p>
@@ -182,11 +198,12 @@
  
       <input type="text" class="input__popup" id="prod-loc-ed">
      </div>
-      <div class="confirmation-buttons">
-       <button class="edit-yes">Yes</button>
-       
-       <button class="edit-no">No</button>
-      </div>
+
+     <div class="confirmation-buttons">
+      <button class="edit-no edit-clear">Clear</button>
+
+      <button class="edit-yes">Edit</button>
+     </div>
     </div>
    </div>
   </div>
@@ -214,8 +231,9 @@
      <div class="confirmation-buttons">
       <!-- <a href="" class="cancel">No</a>
       <a href="" class="confirm prod-dl">Yes</a> -->
-      <button class="prod-dl">Yes</button>
-      <button class="prod-dl-no">No</button>
+      <button class="prod-dl-no edit-no">No</button>
+
+      <button class="prod-dl edit-yes">Yes</button>
      </div>
     </div>
    </div>
@@ -242,18 +260,6 @@
 
  <nav class="sidebar">
   <img src="../assets/images/logo-navbar.png" alt="logo-navbar">
-
-  <div class="userinfo">
-   <div class="userinfo__left">
-    <div class="circle"></div>
-    <!-- <img src="../assets/images/user-image-navbar.png" alt="user-image-navbar" class="orayt"> -->
-   </div>
-
-   <div class="userinfo__right">
-    <p>Jane Doe</p>
-    <p>ID: 1</p>
-   </div>
-  </div>
 
   <ul class="sidebar__links">
    <li><a href="../php/dashboard.php" class="button"><i class="fa-solid fa-dashboard fa-xl"></i> Dashboard</a></li>
@@ -339,7 +345,7 @@
         <p>Description</p>
        </div>
 
-       <textarea class="textarea-popup" cols="116.5" rows="7" name="description"></textarea>
+       <textarea class="textarea-popup" cols="100" rows="7" name="description"></textarea>
       </div>
 
       <div class="form-body">
@@ -347,7 +353,7 @@
         <p>Attributes</p>
        </div>
 
-       <textarea class="textarea-popup" cols="116.5" rows="7" name="attribute"></textarea>
+       <textarea class="textarea-popup" cols="100" rows="7" name="attribute"></textarea>
       </div>
 
       <div class="form-group">
@@ -379,9 +385,9 @@
        
        <div class="form-body">
         <div class="confirmation-buttons">
-         <button class="cancel-button" type="reset" value="Reset">Cancel</button>
+         <button class="cancel-button" type="reset" value="Reset">Clear</button>
     
-         <button class="confirm-button" name="add">Confirm</button>
+         <button class="confirm-button" name="add">Add</button>
         </div>
        </div>
       </div>
@@ -405,7 +411,7 @@
 </body>
 
 <script src="../js/nav-script.js"></script>
-<script src="../js/products-script.js?1916"></script>
+<script src="../js/products-script.js?1917"></script>
 <!-- <script src="../js/dl-product.js?2000"></script> -->
 <script src="../js/jquery/jquery-3.7.1.min.js"></script>
 
@@ -489,10 +495,20 @@
                     
                     if (editPopup.classList.contains("open")){
                         const confirm = document.querySelector(".edit-yes");
-                        const negative = document.querySelector(".edit-no");
+                        const clear = document.querySelector(".edit-clear");
 
+                        clear.addEventListener("click", ()=>{
+                            document.getElementById("prod-name-ed").value = '';
+                            document.getElementById("prod-desc-ed").value = '';
+                            document.getElementById("prod-cat-ed").value = '';
+                            document.getElementById("prod-attr-ed").value = '';
+                            document.getElementById("prod-amnt-held-ed").value = '';
+                            document.getElementById("prod-amnt-sold-ed").value = '';
+                            document.getElementById("prod-loc-ed").value = '';
+                        })
 
                         confirm.addEventListener("click", ()=>{
+                            const popupEditError = document.querySelector(".popup-edit-error");
                             prodNameUp = document.getElementById("prod-name-ed").value;
                             prodDescUp = document.getElementById("prod-desc-ed").value;
                             prodCatUp = document.getElementById("prod-cat-ed").value;
@@ -501,32 +517,41 @@
                             prodAmntSoldUp = document.getElementById("prod-amnt-sold-ed").value;
                             prodLocUp = document.getElementById("prod-loc-ed").value;
 
-                            $.ajax({
-                                method: 'POST',
-                                data: {
-                                    prod_id: prodId,
-                                    prod_name: prodNameUp,
-                                    prod_desc: prodDescUp,
-                                    prod_cat: prodCatUp,
-                                    prod_attr: prodAttrUp,
-                                    prod_amnt_held: prodAmntHeldUp,
-                                    prod_amnt_sold: prodAmntSoldUp,
-                                    prod_loc: prodLocUp
-                                },
-                                url: '../database/up-product.php',
-                                dataType: 'json',
-                                success: function(data){
-                                    if(data.success){
-                                        location.reload();
-                                        overlay.classList.toggle("open");
-                                        editPopup.classList.toggle("open");
-                                    } else {
-                                        overlay.classList.toggle("open");
-                                        dlPopup.classList.toggle("open");
-                                        window.alert(data.message);
-                                    }
+                            if (prodNameUp == '' || prodDescUp == '' || prodCatUp == '' || prodAttrUp == '' || prodAmntHeldUp == '' || prodAmntSoldUp == '' || prodLocUp == '') {
+                                if (overlay.classList.contains("open")) {
+                                    overlay.style.zIndex = "4";
                                 }
-                            })
+
+                                popupEditError.style.zIndex = "4";
+                                popupEditError.classList.toggle("open");
+                            } else {
+                                $.ajax({
+                                    method: 'POST',
+                                    data: {
+                                        prod_id: prodId,
+                                        prod_name: prodNameUp,
+                                        prod_desc: prodDescUp,
+                                        prod_cat: prodCatUp,
+                                        prod_attr: prodAttrUp,
+                                        prod_amnt_held: prodAmntHeldUp,
+                                        prod_amnt_sold: prodAmntSoldUp,
+                                        prod_loc: prodLocUp
+                                    },
+                                    url: '../database/up-product.php',
+                                    dataType: 'json',
+                                    success: function(data){
+                                        if(data.success){
+                                            location.reload();
+                                            overlay.classList.toggle("open");
+                                            editPopup.classList.toggle("open");
+                                        } else {
+                                            overlay.classList.toggle("open");
+                                            dlPopup.classList.toggle("open");
+                                            window.alert(data.message);
+                                        }
+                                    }
+                                })
+                            }
                         })
                     }
                 }

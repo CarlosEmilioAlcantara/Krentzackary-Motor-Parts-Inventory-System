@@ -80,6 +80,7 @@ const popups = document.querySelector(".popup");
 const overlay = document.querySelector(".overlay");
 const overlaySpcl = document.querySelector(".overlay-spcl");
 // const overlays = document.querySelectorAll(".overlay");
+const popupEditError = document.querySelector(".popup-edit-error");
 const exitBtns = document.querySelectorAll(".popup__header-exit");
 
 editBtns.forEach((btn, index)=>{
@@ -130,16 +131,21 @@ dlBtns.forEach((btn, index)=>{
 
 exitBtns.forEach((btn)=>{
     btn.addEventListener("click", ()=>{
-        overlay.classList.toggle("open");
-        if (editPopup.classList.contains("open")) {
+        if (popupEditError.classList.contains("open")) {
+            overlay.style.zIndex = "3";
+            popupEditError.classList.toggle("open");
+        } else if (editPopup.classList.contains("open")) {
             editPopup.classList.toggle("open");
+            overlay.classList.toggle("open");
         } else if (dlPopup.classList.contains("open")) {
             dlPopup.classList.toggle("open");
+            overlay.classList.toggle("open");
         } else if (popups.classList.contains("open")) {
             popups.classList.toggle("open");
+            overlay.classList.toggle("open");
         // } else if (overlays.classList.contains("open")) {
         //     overlays.classList.toggle("open");
-        }
+        } 
     })
 })
 

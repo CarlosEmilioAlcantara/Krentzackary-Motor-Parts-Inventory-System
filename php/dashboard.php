@@ -135,17 +135,6 @@
  <nav class="sidebar">
   <img src="../assets/images/logo-navbar.png" alt="logo-navbar">
 
-  <div class="userinfo">
-   <div class="userinfo__left">
-    <div class="circle"></div>
-   </div>
-
-   <div class="userinfo__right">
-    <p><?= $user['first_name'] ?> <?= $user['last_name'] ?></p>
-    <p>ID: <?= $user['id'] ?></p>
-   </div>
-  </div>
-
   <ul class="sidebar__links">
    <li><a href="../php/dashboard.php" class="button selected"><i class="fa-solid fa-dashboard fa-xl"></i> Dashboard</a></li>
    <li><a href="../php/products.php" class="button"><i class="fa-solid fa-tags fa-xl"></i> Products</a></li>
@@ -158,53 +147,57 @@
   </footer>
  </nav>
 
- <div class="analytics-grid">
-  <div class="pie-grid">
-   <h4>Top 5 Best Selling Items</h4>
+ <div class="analytics-wrapper">
+  <div class="analytics-grid">
+   <div class="pie-grid">
+    <h4>Top 5 Best Selling Items</h4>
 
-   <div class="center">
-    <div class="pie-chart"></div>
+    <div class="center">
+     <div class="pie-chart"></div>
 
-    <ul class="sellers">
-     <li><span id="top"></span><?= $top_sale_name ?> - <?= $top_percentage ?>%</li>
-     <li><span id="second"></span><?= $second_sale_name ?> - <?= $second_percentage_list ?>%</li>
-     <li><span id="third"></span><?= $third_sale_name ?> - <?= $third_percentage_list ?>%</li>
-     <li><span id="fourth"></span><?= $fourth_sale_name ?> - <?= $fourth_percentage_list ?>%</li>
-     <li><span id="fifth"></span><?= $fifth_sale_name ?> - <?= $fifth_percentage_list ?>%</li>
-    </ul>
+     <ul class="sellers">
+      <li><span id="top"></span><?= $top_sale_name ?> - <?= $top_percentage ?>%</li>
+      <li><span id="second"></span><?= $second_sale_name ?> - <?= $second_percentage_list ?>%</li>
+      <li><span id="third"></span><?= $third_sale_name ?> - <?= $third_percentage_list ?>%</li>
+      <li><span id="fourth"></span><?= $fourth_sale_name ?> - <?= $fourth_percentage_list ?>%</li>
+      <li><span id="fifth"></span><?= $fifth_sale_name ?> - <?= $fifth_percentage_list ?>%</li>
+     </ul>
+    </div>
+   </div>
+
+   <div class="pie-grid">
+    <h4>Top 5 Least Selling Items</h4>
+
+    <div class="center">
+     <div class="pie-chart pie-chart-least"></div>
+
+     <ul class="sellers">
+      <li><span id="top"></span><?= $least_sale_name ?> - <?= $least_percentage ?>%</li>
+      <li><span id="second"></span><?= $second_least_sale_name ?> - <?= $second_least_percentage_list ?>%</li>
+      <li><span id="third"></span><?= $third_least_sale_name ?> - <?= $third_least_percentage_list ?>%</li>
+      <li><span id="fourth"></span><?= $fourth_least_sale_name ?> - <?= $fourth_least_percentage_list ?>%</li>
+      <li><span id="fifth"></span><?= $fifth_least_sale_name ?> - <?= $fifth_least_percentage_list ?>%</li>
+     </ul>
+    </div>
    </div>
   </div>
 
-  <div class="pie-grid">
-   <h4>Top 5 Least Selling Items</h4>
+  <div class="analytics-grid">
+   <div class="stocked-items col-2">
+    <div class="content">
+     <h4>Stocked Items Inventory Summary</h4>
 
-   <div class="center">
-    <div class="pie-chart pie-chart-least"></div>
-
-    <ul class="sellers">
-     <li><span id="top"></span><?= $least_sale_name ?> - <?= $least_percentage ?>%</li>
-     <li><span id="second"></span><?= $second_least_sale_name ?> - <?= $second_least_percentage_list ?>%</li>
-     <li><span id="third"></span><?= $third_least_sale_name ?> - <?= $third_least_percentage_list ?>%</li>
-     <li><span id="fourth"></span><?= $fourth_least_sale_name ?> - <?= $fourth_least_percentage_list ?>%</li>
-     <li><span id="fifth"></span><?= $fifth_least_sale_name ?> - <?= $fifth_least_percentage_list ?>%</li>
-    </ul>
-   </div>
-  </div>
-
-  <div class="stocked-items">
-   <div class="content">
-    <h4>Stocked Items Inventory Summary</h4>
-
-    <div class="stats">
-     <p>Total Number of Items: <span><?= $total_stocked ?></span></p>
-     <p>Best Selling Item: <span><?= $top_sale_name ?></span></p>
-     <p>Least Selling Item: <span><?= $least_sale_name ?></span></p>
-     <!-- <p>Category of Best Selling Item: <span></span></p>
-     <p>Category of Least Selling Item: <span></span></p> -->
-     <p>Amount Held of Most Stocked Item: <span><?= $most_stocked_amount ?></span></p>
-     <p>Most Stocked Item: <span><?= $most_stocked ?></span></p>
-     <p>Amount Held of Least Stocked Item: <span><?= $least_stocked_amount ?></span></p>
-     <p>Least Stocked Item: <span><?= $least_stocked ?></span></p>
+     <div class="stats">
+      <p>Total Number of Items: <span><?= $total_stocked ?></span></p>
+      <p>Best Selling Item: <span><?= $top_sale_name ?></span></p>
+      <p>Least Selling Item: <span><?= $least_sale_name ?></span></p>
+      <!-- <p>Category of Best Selling Item: <span></span></p>
+      <p>Category of Least Selling Item: <span></span></p> -->
+      <p>Amount Held of Most Stocked Item: <span><?= $most_stocked_amount ?></span></p>
+      <p>Most Stocked Item: <span><?= $most_stocked ?></span></p>
+      <p>Amount Held of Least Stocked Item: <span><?= $least_stocked_amount ?></span></p>
+      <p>Least Stocked Item: <span><?= $least_stocked ?></span></p>
+     </div>
     </div>
    </div>
   </div>
