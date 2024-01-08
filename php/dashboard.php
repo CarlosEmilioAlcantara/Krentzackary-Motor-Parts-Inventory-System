@@ -26,6 +26,7 @@
  <link rel="stylesheet" href="../assets/fontawesome/css/all.css">
  <link rel="stylesheet" href="../assets/fonts/Nunito/fonts.css">
  <link rel="stylesheet" href="../css/main.css">
+ <link rel="icon" href="../assets/icons/logo-tab.ico">
  <title>Dashboard - Krentzackary Motor Parts</title>
 </head>
 <style>
