@@ -38,6 +38,13 @@
       &.active {
         display: block;
       }
+
+      &.search {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
     }
   }
 
@@ -45,7 +52,7 @@
     border-top-left-radius: 3.3rem;
     border-bottom-left-radius: 3.3rem;
     max-height: 66rem;
-    overflow-y: scroll;
+    overflow-y: scroll; 
     margin: 3rem;
     // width: 94%;
 
@@ -89,6 +96,26 @@
 
     .top-right {
       border-top-right-radius: 3.3rem;
+    }
+  }
+
+  h2 {
+    color: $accent; 
+  }  
+
+  .search-form {
+    @include flexItem('', '');
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    #search {
+      width: 100%;
+      display: inline-block;
+      border: 0;
+      border-radius: 3.3rem 0rem 0rem 3.3rem; 
+      font-size: 1.6rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 }

@@ -115,7 +115,7 @@
   }
 }
 
-.sidebar.open {
+.sidebar.open {  
   width: 33rem;
 }
 
@@ -123,6 +123,10 @@
   @include flexItem(center, center);
   overflow-x: hidden;
   transition: 0.5s;
+
+  &.products {
+    @include flexCol(center, center); 
+  }
 }
 
 .navbody.open {

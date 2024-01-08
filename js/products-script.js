@@ -197,3 +197,9 @@ const clearBtn = document.querySelector(".cancel-button");
 clearBtn.addEventListener("click", ()=>{
     document.getElementById('products-form-php').reset() = "";
 })
+
+// const searchBar = document.getElementById("search");
+
+if (!(document.getElementById("search").value = '')) {
+    document.getElementById("search").value = '';
+}

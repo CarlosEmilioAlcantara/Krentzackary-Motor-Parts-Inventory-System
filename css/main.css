@@ -264,6 +264,16 @@ a.confirm:hover {
   cursor: pointer;
 }
 
+.search-button {
+  border: 0;
+  border-radius: 0rem 3.3rem 3.3rem 0rem;
+  background-color: #1a6ec6;
+  color: #e5e7e6;
+}
+.search-button:hover {
+  background-color: #484D79;
+}
+
 input {
   background-color: #e5e7e6;
   border: none;
@@ -412,6 +422,7 @@ input {
 .popup-delete-product {
   z-index: 3;
   position: fixed;
+  top: 40%;
   width: 50.5rem;
   height: 20rem;
   background-color: #32373a;
@@ -731,6 +742,12 @@ input {
   overflow-x: hidden;
   transition: 0.5s;
 }
+.navbody.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .navbody.open {
   margin-left: 66rem;
@@ -878,6 +895,12 @@ input {
 .sections .content_box .content.active {
   display: block;
 }
+.sections .content_box .content.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .sections .table-wrapper {
   border-top-left-radius: 3.3rem;
   border-bottom-left-radius: 3.3rem;
@@ -918,6 +941,25 @@ input {
 }
 .sections .products-table .top-right {
   border-top-right-radius: 3.3rem;
+}
+.sections h2 {
+  color: #ff8e00;
+}
+.sections .search-form {
+  display: flex;
+  justify-content: "";
+  align-items: "";
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+.sections .search-form #search {
+  width: 100%;
+  display: inline-block;
+  border: 0;
+  border-radius: 3.3rem 0rem 0rem 3.3rem;
+  font-size: 1.6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .form-title {

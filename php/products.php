@@ -48,7 +48,7 @@
 //     document.getElementById('clearer').value = "";
 // } -->
 <!-- </script> -->
-<body class="navbody">
+<body class="navbody products">
  <div class="overlay"></div>
  <?php
     if(!empty($error_message)) { ?>
@@ -281,6 +281,7 @@
 
   <div class="content-box">
    <div class="content">
+    
    <!-- <p class="product-count active"><?= count($products) ?> Product/s</p> -->
     <div class="table-wrapper active">
      <table class="products-table">
@@ -399,19 +400,104 @@
       </div> -->
      </div>
     </form>
-
    </div>
   </div>
  </div>
- <div class="popup__header-exit-spcl fix">
- <div class="confirmation-buttons fix">
-  <a href="" class="cancel">No</a>
-  <a href="" class="confirm prod-dl">Yes</a>
+
+ <div class="sections table-section">
+  <div class="tab-box">
+   <h2 class="sections__header">Search for Item in Table</h2>
+  </div>
+
+  <form action="" method="GET" class="search-form">
+   <input type="text" name="search" id="search" value="<?php 
+        $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+        if ($pageWasRefreshed) {
+            echo '';
+        } else if (isset($_GET['search'])) {
+            echo $_GET['search'];
+        } ?>" autocomplete="off">
+   <button class="search-button">Search</button>
+  </form>
+
+  <div class="content-box">
+   <div class="content">
+    <div class="table-wrapper active">
+      <?php
+       $con = mysqli_connect("localhost","root","","krentzackary");
+       $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
+
+        if ($pageWasRefreshed) {
+            ;
+        } else if (isset($_GET['search'])) {
+            $filterValues = $_GET['search'];
+            $query = "SELECT * FROM products WHERE CONCAT(product_name,category,description,attribute,amount_held,amount_sold,location) LIKE '%$filterValues%' ";
+
+            $query_run = mysqli_query($con, $query);
+
+            if(mysqli_num_rows($query_run) > 0){
+                foreach($query_run as $product) { ?>
+                        <table class="products-table">
+                         <tr>
+                          <th class="top-left">ID #</th>
+                          <th>Product Name</th>
+                          <th>Description</th>
+                          <th>Categories</th>
+                          <th>Attributes</th>
+                          <th>Amount Held</th>
+                          <th>Amount Sold</th>
+                          <th>Location</th>
+                          <th>Created At</th>
+                          <th>Updated At</th>
+                          <th>Action</th> 
+                         </tr>
+
+                         <tr>
+                          <!-- <td><?= $index + 1 ?></td> -->
+                          <td><?= $product['id'] ?></td>
+                          <td class="p-name"><?= $product['product_name'] ?></td>
+                          <td class="p-desc"><?= $product['description'] ?></td>
+                          <td class="p-cat"><?= $product['category'] ?></td>
+                          <td class="p-attr"><?= $product['attribute'] ?></td>
+                          <td class="p-amnt-held"><?= $product['amount_held'] ?></td>
+                          <td class="p-amnt-sold"><?= $product['amount_sold'] ?></td>
+                          <td class="p-loc"><?= $product['location'] ?></td>
+                          <td><?= date('F d @ h:i:s A', strtotime($product['created_at'])) ?></td>
+                          <td><?= date('F d @ h:i:s A', strtotime($product['updated_at'])) ?></td>
+                          <td class="action-btns"><span class="edit-btn" data-prodid="<?= $product['id'] ?>"><img src="../assets/icons/edit.svg" class="edit-icon"> Edit</span> or <span class="dl-btn" data-prodid="<?= $product['id'] ?>" data-pname="<?= $product['product_name']?>" data-cat="<?= $product['category']?>"><img src="../assets/icons/delete.svg" class="dl-icon"> Delete</span></td>
+                         </tr>
+                    <?php } ?>
+            <?php } else { ?>
+                    <table class="products-table">
+                    <tr>
+                     <th class="top-left">ID #</th>
+                     <th>Product Name</th>
+                     <th>Description</th>
+                     <th>Categories</th>
+                     <th>Attributes</th>
+                     <th>Amount Held</th>
+                     <th>Amount Sold</th>
+                     <th>Location</th>
+                     <th>Created At</th>
+                     <th>Updated At</th>
+                     <th>Action</th> 
+                    </tr>
+
+                    <tr>
+                     <td colspan="11">No Record Found</td>
+                    </tr>
+            <?php } ?>
+        <?php } ?>
+     </table>
+    </div>
+   </div>
+  </div>
  </div>
 </body>
 
 <script src="../js/nav-script.js"></script>
-<script src="../js/products-script.js?1917"></script>
+<script src="../js/products-script.js?1920"></script>
 <!-- <script src="../js/dl-product.js?2000"></script> -->
 <script src="../js/jquery/jquery-3.7.1.min.js"></script>
 
