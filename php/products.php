@@ -10,7 +10,6 @@
     $_SESSION['table'] = 'products';
     // $product = $_SESSION['product'];
     $products = include('../database/show-products.php');
-    // var_dump($products);
     // Default error to empty so we can customize it
     $error_message = '';
 
@@ -26,7 +25,7 @@
         $location = $_POST['location'];
 
         if ($product_name == '' || $category == '' || $description == '' || $attribute == '' || $amount_held == '' || $amount_sold == '' || $location == '') {
-            $error_message = 'Kamotecue';
+            $error_message = 'Product Addition Error';
         } else header('Location: ../database/add-products.php?product_name='.$product_name.'&category='.$category.'&description='.$description.'&attribute='.$attribute.'&amount_held='.$amount_held.'&amount_sold='.$amount_sold.'&location='.$location);
     } else ;
 
@@ -44,11 +43,6 @@
  <link rel="icon" href="../assets/icons/logo-tab.ico">
  <title>Products - Krentzackary Motor Parts</title>
 </head>
-<!-- <script> -->
-<!-- // function resetValues(){
-//     document.getElementById('clearer').value = "";
-// } -->
-<!-- </script> -->
 <body class="navbody products">
  <div class="overlay"></div>
  <?php
@@ -393,12 +387,6 @@
         </div>
        </div>
       </div>
-
-      <!-- <input type="hidden" name="table" value="product"> -->
-
-      <!-- <div>
-
-      </div> -->
      </div>
     </form>
    </div>
@@ -499,7 +487,6 @@
 
 <script src="../js/nav-script.js"></script>
 <script src="../js/products-script.js?1920"></script>
-<!-- <script src="../js/dl-product.js?2000"></script> -->
 <script src="../js/jquery/jquery-3.7.1.min.js"></script>
 
 <script>
@@ -649,6 +636,4 @@
     var script = new script;
     script.initialize();
 </script>
-
-<script src="../js/analytics.js"></script>
 </html>

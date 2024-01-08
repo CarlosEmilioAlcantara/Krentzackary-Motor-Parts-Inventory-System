@@ -11,7 +11,6 @@
 
     try {
         $sql = "UPDATE user SET first_name=?, last_name=?, birthday=?, email=?, secret=?, password=? WHERE id=?";
-        // var_dump($sql);
 
         include("./connection.php");
 
@@ -22,11 +21,6 @@
         echo json_encode([
             'success' => true
         ]);
-
-        // echo "<br>";
-        // var_dump($conn);
-        // echo "<br>";
-
     } catch (PDOException $e) { // Para lang ito sa database error
         echo json_encode([
             'success' => false

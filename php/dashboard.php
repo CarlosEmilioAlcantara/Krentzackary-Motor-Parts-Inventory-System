@@ -9,13 +9,6 @@
     $user = ($_SESSION['user']);
 
     include('../database/analytics.php');
-    
-    // $amounts = [];
-    // $products = ($_SESSION['products']);
-
-    // $query = 'SELECT * FROM products';
-    // $stmt = $conn->prepare($query);
-    // $stmt->execute();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -192,8 +185,6 @@
       <p>Total Number of Items: <span><?= $total_stocked ?></span></p>
       <p>Best Selling Item: <span><?= $top_sale_name ?></span></p>
       <p>Least Selling Item: <span><?= $least_sale_name ?></span></p>
-      <!-- <p>Category of Best Selling Item: <span></span></p>
-      <p>Category of Least Selling Item: <span></span></p> -->
       <p>Amount Held of Most Stocked Item: <span><?= $most_stocked_amount ?></span></p>
       <p>Most Stocked Item: <span><?= $most_stocked ?></span></p>
       <p>Amount Held of Least Stocked Item: <span><?= $least_stocked_amount ?></span></p>

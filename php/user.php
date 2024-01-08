@@ -7,11 +7,6 @@
     // site if the user is not logged in
     if (!isset($_SESSION['user'])) header('Location: login.php');
     include('../database/connection.php');
-
-    // if($_POST){
-    //     $itlog = $_POST['old-pass'];
-    //     echo $itlog;
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +22,6 @@
 </head>
 <body class="navbody">
  <div class="overlay"></div>
- <!-- <div class="overlay special"></div> -->
  <div class="popup">
   <div class="popup__header error">
    <div class="popup__container">
@@ -131,7 +125,7 @@
      </div>
      <div class="push-to-right">
        <div class="confirmation-buttons user">
-        <button class="cancel-button" id="cancel-change">Cancel</a>
+        <button class="cancel-button" id="clear-change">Clear</a>
 
         <button class="confirm-button" id="confirm-change">Confirm</a>
        </div>
@@ -277,11 +271,6 @@
                 const inputError = document.querySelector(".popup");
                 const overlay = document.querySelector(".overlay");
 
-                // if (oldFirstName == '' || oldLastName == '' || oldBirthday == '' || oldEmail == '' || oldSecret == '' || oldSecret == '') {
-                //     inputError.classList.toggle("open");
-                //     overlay.classList.toggle("open");
-                // }
-
                 $.ajax({
                     method: 'POST',
                     data: { 
@@ -312,8 +301,18 @@
                             overlay.classList.toggle("open");
                             popup.classList.toggle("open");
 
+                            const clearChange = document.getElementById("clear-change");
+                            clearChange.addEventListener("click", ()=>{
+                                    document.getElementById("first-name").value = '';
+                                    document.getElementById("last-name").value = '';
+                                    document.getElementById("birthday").value = '';
+                                    document.getElementById("email").value = '';
+                                    document.getElementById("secret").value = '';
+                                    document.getElementById("old-pass-popup").value = '';
+                                    document.getElementById("new-pass").value = '';
+                            })
+                            
                             const confirmChange = document.getElementById("confirm-change");
-
                             confirmChange.addEventListener('click', ()=>{
                                 firstNameUp = document.getElementById("first-name").value;
                                 lastNameUp = document.getElementById("last-name").value;
@@ -322,7 +321,6 @@
                                 secretUp = document.getElementById("secret").value;
                                 oldPassPopup = document.getElementById("old-pass-popup").value;
                                 newPass = document.getElementById("new-pass").value;
-                                // console.log(firstNameUp, lastNameUp, birthdayUp, emailUp, secretUp, oldPassPopup, newPass);
 
                                 if (firstNameUp == '' || lastNameUp == '' || birthdayUp == '' || emailUp == '' || secretUp == '' || oldPassPopup == '' || newPass == '') {
                                     if (overlay.classList.contains("open")) {
@@ -331,7 +329,6 @@
 
                                     inputError.style.zIndex = "4";
                                     inputError.classList.add("open");
-                                    // overlay.classList.toggle("open");
                                 } else {
                                     $.ajax({
                                         method: 'POST',

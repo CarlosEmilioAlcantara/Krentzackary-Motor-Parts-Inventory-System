@@ -79,7 +79,6 @@ const dlPopup = document.querySelector(".popup-delete-product");
 const popups = document.querySelector(".popup");
 const overlay = document.querySelector(".overlay");
 const overlaySpcl = document.querySelector(".overlay-spcl");
-// const overlays = document.querySelectorAll(".overlay");
 const popupEditError = document.querySelector(".popup-edit-error");
 const exitBtns = document.querySelectorAll(".popup__header-exit");
 
@@ -143,34 +142,15 @@ exitBtns.forEach((btn)=>{
         } else if (popups.classList.contains("open")) {
             popups.classList.toggle("open");
             overlay.classList.toggle("open");
-        // } else if (overlays.classList.contains("open")) {
-        //     overlays.classList.toggle("open");
         } 
     })
 })
-
-// overlays.forEach((over)=>{
-//     over.addEventListener("click", ()=>{
-//         overlay.classList.toggle("open");
-//         if (editPopup.classList.contains("open")) {
-//             editPopup.classList.toggle("open");
-//         } else if (dlPopup.classList.contains("open")) {
-//             dlPopup.classList.toggle("open");
-//         } else if (popups.classList.contains("open")) {
-//             popups.classList.toggle("open");
-//         } else if (overlays.classList.contains("open")) {
-//             overlays.classList.toggle("open");
-//         }
-//     })
-// })
 
 const exitSpcl = document.querySelector(".popup__header-exit-spcl");
 
 exitSpcl.addEventListener("click", ()=>{
     overlaySpcl.classList.toggle("open");
-    // if (popups.classList.contains("open")) {
-        popups.classList.toggle("open");
-    // }
+    popups.classList.toggle("open");
 })
 
 overlay.addEventListener("click", ()=>{
@@ -179,16 +159,12 @@ overlay.addEventListener("click", ()=>{
         editPopup.classList.toggle("open");
     } else if (dlPopup.classList.contains("open")) {
         dlPopup.classList.toggle("open");
-    // } else if (popups.classList.contains("open")) {
-    //     popups.classList.toggle("open");
     }
 })
 
 overlaySpcl.addEventListener("click", ()=>{
     overlaySpcl.classList.toggle("open");
-    // if (popups.classList.contains("open")) {
-        popups.classList.toggle("open");
-    // }
+    popups.classList.toggle("open");
 })
 
 // Clear inputs
@@ -197,9 +173,3 @@ const clearBtn = document.querySelector(".cancel-button");
 clearBtn.addEventListener("click", ()=>{
     document.getElementById('products-form-php').reset() = "";
 })
-
-// const searchBar = document.getElementById("search");
-
-if (!(document.getElementById("search").value = '')) {
-    document.getElementById("search").value = '';
-}

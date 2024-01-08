@@ -10,7 +10,3 @@
     // // Just completely remove the session
     // session_destroy();
 ?>
-
-<!-- <html>
-    <p>huzzah!</p>
-</html> -->

@@ -8,7 +8,6 @@
     $error_message = '';
 
     if($_POST){
-        // var_dump($_POST);
         include("../database/connection.php"); // Connecting to database
 
         // Getting form content and assigning names
@@ -26,8 +25,6 @@
             // Get only the actual values of entities
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             // Get only the first index
-            // The index seems to be the first group of entites
-            // I think
             $user = $stmt->fetchAll()[0];
             // Set session table to table user so we can get values from it
             $_SESSION['user'] = $user;
@@ -81,7 +78,6 @@
    <img src="../assets/images/logo-login.png" alt="Krentzackary Motor Parts & Accesories">
 
    <div class="banner__login">
-    <!-- <form class="banner__login__form" action="login.php" method="GET"> -->
     <form class="banner__login__form" action="login.php" method="POST">
      <div class="banner__login__user">
       <div>
@@ -102,7 +98,6 @@
      </div>
 
      <button>Login</button>
-     <!-- <a href="../php/dashboard.php" class="button login-button">Login</a> -->
     </form>
    </div>
   </div>
